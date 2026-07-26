@@ -47,17 +47,17 @@ export default function ServicePage() {
 
   return (
     <>
-      <section className="relative bg-ink text-paper pt-40 pb-24 grain overflow-hidden">
-        <div className="absolute inset-0 text-teal/40">
+      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain overflow-hidden">
+        <div className="absolute inset-0 text-teal/20">
           <ScatterField className="absolute right-[-15%] top-1/2 h-[560px] w-[720px] -translate-y-1/2 opacity-60" />
         </div>
         <div className="container-page relative">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-paper/10 text-teal-tint">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ink/5 text-teal">
                 <Icon size={20} />
               </span>
-              <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint">{detail.eyebrow}</p>
+              <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal">{detail.eyebrow}</p>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
@@ -66,7 +66,7 @@ export default function ServicePage() {
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 max-w-xl text-lg text-paper/70 leading-relaxed">{detail.tagline}</p>
+            <p className="mt-5 max-w-xl text-lg text-ink-soft leading-relaxed">{detail.tagline}</p>
           </Reveal>
         </div>
       </section>
@@ -126,11 +126,11 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-ink text-paper py-24 grain">
+      <section className="bg-blue-bg text-ink py-24 grain">
         <div className="container-page">
-          <SectionHeading eyebrow="Workflow" title="How the engagement runs" light />
+          <SectionHeading eyebrow="Workflow" title="How the engagement runs" />
           <div className="mt-16">
-            <WorkflowSteps steps={detail.workflow} dark />
+            <WorkflowSteps steps={detail.workflow} />
           </div>
         </div>
       </section>

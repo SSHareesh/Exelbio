@@ -22,11 +22,11 @@ const byIndication = [
 export default function Solutions() {
   return (
     <>
-      <section className="relative bg-ink text-paper pt-40 pb-24 grain">
+      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal-tint" /> Solutions
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+              <span className="inline-block h-px w-6 bg-teal" /> Solutions
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -35,7 +35,7 @@ export default function Solutions() {
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-paper/70 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               A Phase I dose-escalation study and a Phase III cardiovascular outcomes
               trial need different statistical instincts. We staff accordingly.
             </p>

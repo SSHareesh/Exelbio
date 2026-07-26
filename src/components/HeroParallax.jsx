@@ -105,11 +105,11 @@ export default function HeroParallax() {
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden text-paper"
+      className="relative flex min-h-screen items-center overflow-hidden text-ink"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse 90% 60% at 20% 0%, #16273a 0%, #101c2c 55%), " +
-          "radial-gradient(ellipse 60% 50% at 90% 100%, #0c3f37 0%, transparent 60%)",
+          "radial-gradient(ellipse 90% 60% at 20% 0%, #dceaf8 0%, #ebf4fe 55%), " +
+          "radial-gradient(ellipse 60% 50% at 90% 100%, #c8ddf0 0%, transparent 60%)",
       }}
     >
       {/* ══════════════════════════════════════════════════════════
@@ -128,17 +128,17 @@ export default function HeroParallax() {
           transition={{ duration: 2.6, ease: "easeOut" }}
         >
           <MorphingBlob
-            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal-deep/25 blur-[90px]"
+            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal/10 blur-[90px]"
             animIndex={1}
             delay="0s"
           />
           <MorphingBlob
-            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-indigo/20 blur-[80px]"
+            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-indigo/10 blur-[80px]"
             animIndex={2}
             delay="4s"
           />
           <MorphingBlob
-            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/[0.09] blur-[110px]"
+            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/[0.06] blur-[110px]"
             animIndex={3}
             delay="8s"
           />
@@ -169,7 +169,7 @@ export default function HeroParallax() {
           ═════════════════════════════════════════════════════════ */}
       <motion.div
         style={{ x: scat3X, y: scat3Y }}
-        className="absolute inset-0 pointer-events-none text-teal/50"
+        className="absolute inset-0 pointer-events-none text-teal/30"
         aria-hidden="true"
       >
         <motion.div
@@ -199,9 +199,9 @@ export default function HeroParallax() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-teal-tint flex items-center gap-2"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-teal flex items-center gap-2"
         >
-          <span className="inline-block h-px w-8 bg-teal-tint" />
+          <span className="inline-block h-px w-8 bg-teal" />
           Biomedical Statistics CRO
         </motion.p>
 
@@ -227,7 +227,7 @@ export default function HeroParallax() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.32 }}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-paper/70"
+            className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
           >
             Lumetrics pairs sponsors with named biostatisticians — not account teams — for
             trial design, CDISC programming, data management, and submission-ready
@@ -243,8 +243,8 @@ export default function HeroParallax() {
             transition={{ duration: 0.8, delay: 0.44 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <Button to="/contact" variant="inverse">Talk to a statistician</Button>
-            <Button to="/services" variant="outline-light" icon={false}>
+            <Button to="/contact" variant="primary">Talk to a statistician</Button>
+            <Button to="/services" variant="outline" icon={false}>
               Explore services
             </Button>
           </motion.div>
@@ -263,7 +263,7 @@ export default function HeroParallax() {
 
       {/* Scroll caret */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-paper/40"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/30"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         style={{ opacity: contentOpacity }}

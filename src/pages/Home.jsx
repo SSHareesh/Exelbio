@@ -106,17 +106,16 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════════
           WHY CHOOSE US — unchanged from original
           ═════════════════════════════════════════════════════════ */}
-      <section className="relative bg-ink text-paper py-28 grain">
+      <section className="relative bg-blue-bg text-ink py-28 grain">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why Lumetrics"
             title="What sponsors notice after the first study."
             description="Not a list of certifications — the operational habits that actually change how a trial goes."
-            light
           />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {strengths.map((item, i) => (
-              <StrengthCard key={item.title} item={item} index={i} dark />
+              <StrengthCard key={item.title} item={item} index={i} />
             ))}
           </div>
         </div>

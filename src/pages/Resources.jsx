@@ -45,11 +45,11 @@ const webinars = [
 export default function Resources() {
   return (
     <>
-      <section className="relative bg-ink text-paper pt-40 pb-24 grain">
+      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal-tint" /> Resources
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+              <span className="inline-block h-px w-6 bg-teal" /> Resources
             </p>
           </Reveal>
           <Reveal delay={0.08}>

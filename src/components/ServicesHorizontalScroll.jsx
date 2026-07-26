@@ -10,44 +10,44 @@ const tones = ["teal", "indigo", "amber"];
 
 /* ─── Design tokens (matching site palette) ─── */
 const tintBg = {
-  teal:   "bg-teal-tint",
+  teal: "bg-teal-tint",
   indigo: "bg-indigo-tint",
-  amber:  "bg-amber-tint",
+  amber: "bg-amber-tint",
 };
 const accentText = {
-  teal:   "text-teal",
+  teal: "text-teal",
   indigo: "text-indigo",
-  amber:  "text-amber",
+  amber: "text-amber",
 };
 const accentBorder = {
-  teal:   "border-teal/20",
+  teal: "border-teal/20",
   indigo: "border-indigo/20",
-  amber:  "border-amber/30",
+  amber: "border-amber/30",
 };
 
 /* ─── Intro card ─── */
 function IntroCard() {
   return (
-    <div className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-ink/10 bg-ink text-paper p-9 sm:p-11">
+    <div className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-blue-deep bg-blue-bg text-ink p-9 sm:p-11">
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint flex items-center gap-2">
-          <span className="inline-block h-px w-6 bg-teal-tint" /> What we do
+        <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+          <span className="inline-block h-px w-6 bg-teal" /> What we do
         </p>
         <h3 className="mt-6 font-display text-[2.6rem] sm:text-5xl leading-[1.06] tracking-tight">
           Six&nbsp;disciplines.<br />One&nbsp;team.
         </h3>
-        <p className="mt-6 text-paper/65 leading-relaxed max-w-xs text-[0.95rem]">
+        <p className="mt-6 text-ink-soft leading-relaxed max-w-xs text-[0.95rem]">
           Each service runs independently or as one accountable engagement — staffed by
           the same statisticians from consultation through submission.
         </p>
       </div>
       <div className="mt-10 space-y-3">
-        <div className="h-px w-full bg-paper/10" />
-        <p className="text-paper/40 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
+        <div className="h-px w-full bg-ink/10" />
+        <p className="text-ink/40 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
           Scroll to explore →
         </p>
         <div className="mt-6">
-          <Button to="/services" variant="inverse" icon={false} className="hover:bg-yellow hover:text-white">
+          <Button to="/services" variant="primary" icon={false}>
             View all services
           </Button>
         </div>
@@ -70,12 +70,12 @@ function IntroCard() {
 */
 
 const highlights = {
-  "biostatistics":              ["SAP authorship", "Sample size & power", "Adaptive design simulation"],
-  "statistical-programming":    ["SDTM / ADaM datasets", "Double-programming QC", "SAS & R capable"],
-  "clinical-data-management":   ["eCRF & edit-check design", "Real-time query aging", "Database lock prep"],
-  "statistical-consulting":     ["FDA meeting prep", "Estimand strategy", "Independent SAP review"],
+  "biostatistics": ["SAP authorship", "Sample size & power", "Adaptive design simulation"],
+  "statistical-programming": ["SDTM / ADaM datasets", "Double-programming QC", "SAS & R capable"],
+  "clinical-data-management": ["eCRF & edit-check design", "Real-time query aging", "Database lock prep"],
+  "statistical-consulting": ["FDA meeting prep", "Estimand strategy", "Independent SAP review"],
   "regulatory-submission-support": ["ISS / ISE construction", "eCTD Module 5 packaging", "IR fast turnaround"],
-  "medical-writing":            ["Protocol authoring", "ICH E3 CSRs", "Manuscript & abstract support"],
+  "medical-writing": ["Protocol authoring", "ICH E3 CSRs", "Manuscript & abstract support"],
 };
 
 const serviceImages = {
@@ -114,35 +114,47 @@ function InfoCard({ service, index, tone, className = "" }) {
 
   return (
     <motion.div
-      className={`flex flex-col justify-between rounded-3xl border p-5 sm:p-6 ${className} ${
-        isOdd
-          ? "bg-paper-dim border-ink/10 text-ink shadow-[0_2px_12px_0_rgba(16,28,44,0.05)]"
-          : "bg-ink border-white/10 text-paper shadow-[0_8px_30px_-12px_rgba(0,0,0,0.3)]"
-      }`}
+      className={`relative flex flex-col justify-between rounded-3xl p-5 sm:p-6 ${className} overflow-hidden`}
+      style={{
+        /* Glassmorphism base */
+        backdropFilter: "blur(18px)",
+        WebkitBackdropFilter: "blur(18px)",
+        background: isOdd
+          ? "linear-gradient(135deg, rgba(245,243,238,0.72) 0%, rgba(236,233,225,0.55) 100%)"
+          : "linear-gradient(135deg, rgba(235,244,254,0.72) 0%, rgba(220,234,248,0.55) 100%)",
+        border: isOdd
+          ? "1px solid rgba(16,28,44,0.10)"
+          : "1px solid rgba(200,221,240,0.70)",
+        boxShadow: isOdd
+          ? "0 4px 24px -8px rgba(16,28,44,0.10), inset 0 1px 0 rgba(255,255,255,0.60)"
+          : "0 8px 32px -12px rgba(16,28,44,0.12), inset 0 1px 0 rgba(255,255,255,0.75)",
+      }}
       initial={{ scale: 1 }}
       whileHover={{ y: -5, scale: 1.012 }}
       transition={{ type: "spring", stiffness: 280, damping: 20 }}
     >
+      {/* Subtle inner glass sheen — top-left highlight */}
+      <div
+        className="pointer-events-none absolute inset-0 rounded-3xl"
+        style={{
+          background: isOdd
+            ? "linear-gradient(135deg, rgba(255,255,255,0.45) 0%, transparent 55%)"
+            : "linear-gradient(135deg, rgba(255,255,255,0.60) 0%, transparent 55%)",
+        }}
+      />
+
       {/* Header row */}
-      <div className="min-h-0 overflow-hidden">
+      <div className="relative min-h-0 overflow-hidden">
         <div className="flex justify-end">
-          <span
-            className={`font-mono text-[0.65rem] ${
-              isOdd ? "text-ink-soft/40" : "text-paper/40"
-            }`}
-          >
+          <span className="font-mono text-[0.65rem] text-ink/40">
             0{index + 1}
           </span>
         </div>
 
-        <h3 className={`mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight ${
-          isOdd ? "text-ink" : "text-paper"
-        }`}>
+        <h3 className="mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight text-ink">
           {service.title}
         </h3>
-        <p className={`mt-1.5 text-[0.82rem] leading-relaxed line-clamp-3 ${
-          isOdd ? "text-ink-soft" : "text-paper/70"
-        }`}>
+        <p className="mt-1.5 text-[0.82rem] leading-relaxed line-clamp-3 text-ink-soft">
           {service.short}
         </p>
 
@@ -152,14 +164,11 @@ function InfoCard({ service, index, tone, className = "" }) {
             {bullets.map((b) => (
               <li
                 key={b}
-                className={`flex items-center gap-2 text-[0.76rem] ${
-                  isOdd ? "text-ink-soft" : "text-paper/75"
-                }`}
+                className="flex items-center gap-2 text-[0.76rem] text-ink-soft"
               >
                 <span
-                  className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${
-                    isOdd ? accentText[tone] + " bg-current" : "bg-paper"
-                  }`}
+                  className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${accentText[tone] + " bg-current"
+                    }`}
                 />
                 {b}
               </li>
@@ -171,14 +180,15 @@ function InfoCard({ service, index, tone, className = "" }) {
       {/* Footer CTA */}
       <Button
         to={`/services/${service.slug}`}
-        variant={isOdd ? "primary" : "inverse"}
-        className="mt-4 self-start"
+        variant="primary"
+        className="relative mt-4 self-start"
       >
         Learn more
       </Button>
     </motion.div>
   );
 }
+
 
 /*
   Two-size card system — descriptions get more room, images stay compact.
@@ -192,13 +202,13 @@ function InfoCard({ service, index, tone, className = "" }) {
     Total        : 272 + 20 + 168 = 460px ✓
 */
 
-const PANEL_W_DESKTOP  = "lg:w-[300px]";
-const INFO_CARD_H      = "lg:h-[272px]";
-const IMAGE_CARD_H     = "lg:h-[168px]";
-const PANEL_W_MOBILE   = "w-[82vw] sm:w-[74vw]";
+const PANEL_W_DESKTOP = "lg:w-[300px]";
+const INFO_CARD_H = "lg:h-[272px]";
+const IMAGE_CARD_H = "lg:h-[168px]";
+const PANEL_W_MOBILE = "w-[82vw] sm:w-[74vw]";
 
 function ServicePanel({ service, index }) {
-  const tone     = tones[index % tones.length];
+  const tone = tones[index % tones.length];
   const imageTop = index % 2 === 0; // alternate image-top vs info-top
 
   return (
@@ -208,13 +218,13 @@ function ServicePanel({ service, index }) {
           {/* image on top (shorter), info below (taller) */}
           <ImageCard service={service} tone={tone}
             className={`shrink-0 ${IMAGE_CARD_H} flex-[0_0_38%] lg:flex-none`} />
-          <InfoCard  service={service} index={index} tone={tone}
+          <InfoCard service={service} index={index} tone={tone}
             className={`shrink-0 ${INFO_CARD_H} flex-[0_0_62%] lg:flex-none`} />
         </>
       ) : (
         <>
           {/* info on top (taller), image below (shorter) */}
-          <InfoCard  service={service} index={index} tone={tone}
+          <InfoCard service={service} index={index} tone={tone}
             className={`shrink-0 ${INFO_CARD_H} flex-[0_0_62%] lg:flex-none`} />
           <ImageCard service={service} tone={tone}
             className={`shrink-0 ${IMAGE_CARD_H} flex-[0_0_38%] lg:flex-none`} />
@@ -227,13 +237,13 @@ function ServicePanel({ service, index }) {
 /* ─── Main export ─── */
 export default function ServicesHorizontalScroll() {
   const sectionRef = useRef(null);
-  const trackRef   = useRef(null);
+  const trackRef = useRef(null);
   const [distance, setDistance] = useState(0);
 
   useEffect(() => {
     function measure() {
       if (trackRef.current) {
-        const trackWidth    = trackRef.current.scrollWidth;
+        const trackWidth = trackRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
         setDistance(Math.max(trackWidth - viewportWidth, 0));
       }
@@ -305,7 +315,7 @@ export default function ServicesHorizontalScroll() {
 
           {/* Service panels — two-size system on mobile too */}
           {services.map((s, i) => {
-            const tone     = tones[i % tones.length];
+            const tone = tones[i % tones.length];
             const imageTop = i % 2 === 0;
             return (
               <div key={s.slug} className="snap-start h-[480px] shrink-0 w-[82vw] sm:w-[74vw]">
@@ -314,12 +324,12 @@ export default function ServicesHorizontalScroll() {
                     <>
                       {/* image shorter (38%), info taller (62%) */}
                       <ImageCard service={s} tone={tone} className="flex-[0_0_36%]" />
-                      <InfoCard  service={s} index={i} tone={tone} className="flex-[0_0_64%]" />
+                      <InfoCard service={s} index={i} tone={tone} className="flex-[0_0_64%]" />
                     </>
                   ) : (
                     <>
                       {/* info taller (62%), image shorter (38%) */}
-                      <InfoCard  service={s} index={i} tone={tone} className="flex-[0_0_64%]" />
+                      <InfoCard service={s} index={i} tone={tone} className="flex-[0_0_64%]" />
                       <ImageCard service={s} tone={tone} className="flex-[0_0_36%]" />
                     </>
                   )}

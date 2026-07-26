@@ -20,6 +20,10 @@
   --color-amber: #c1873b;
   --color-amber-tint: #f6ecdc;
   --color-line: #ded9cd;
+
+  --color-blue-bg: #ebf4fe;
+  --color-blue-dim: #dceaf8;
+  --color-blue-deep: #c8ddf0;
 }
 
 html {
@@ -31,9 +35,11 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
 .lenis.lenis-stopped {
   overflow: hidden;
 }
@@ -53,6 +59,7 @@ body {
 .font-display {
   font-family: var(--font-display);
 }
+
 .font-mono {
   font-family: var(--font-mono);
 }
@@ -61,7 +68,10 @@ body {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -87,6 +97,7 @@ body {
 .grain {
   position: relative;
 }
+
 .grain::after {
   content: "";
   position: absolute;
@@ -105,19 +116,51 @@ body {
 
 /* ── Morphing blob keyframes ─────────────────────────── */
 @keyframes blob-morph-1 {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  25%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-  50%       { border-radius: 50% 60% 30% 40% / 40% 50% 60% 30%; }
-  75%       { border-radius: 40% 30% 60% 70% / 60% 40% 30% 70%; }
+
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  50% {
+    border-radius: 50% 60% 30% 40% / 40% 50% 60% 30%;
+  }
+
+  75% {
+    border-radius: 40% 30% 60% 70% / 60% 40% 30% 70%;
+  }
 }
+
 @keyframes blob-morph-2 {
-  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-  33%       { border-radius: 70% 30% 50% 60% / 50% 70% 30% 60%; }
-  66%       { border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%; }
+
+  0%,
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+
+  33% {
+    border-radius: 70% 30% 50% 60% / 50% 70% 30% 60%;
+  }
+
+  66% {
+    border-radius: 30% 70% 40% 60% / 70% 30% 60% 40%;
+  }
 }
+
 @keyframes blob-morph-3 {
-  0%, 100% { border-radius: 70% 30% 40% 60% / 30% 60% 40% 70%; }
-  50%       { border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%; }
+
+  0%,
+  100% {
+    border-radius: 70% 30% 40% 60% / 30% 60% 40% 70%;
+  }
+
+  50% {
+    border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  }
 }
 
 .morphing-blob {
@@ -125,16 +168,40 @@ body {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-.morph-1 { animation-name: blob-morph-1; animation-duration: 12s; }
-.morph-2 { animation-name: blob-morph-2; animation-duration: 15s; }
-.morph-3 { animation-name: blob-morph-3; animation-duration: 10s; }
+
+.morph-1 {
+  animation-name: blob-morph-1;
+  animation-duration: 12s;
+}
+
+.morph-2 {
+  animation-name: blob-morph-2;
+  animation-duration: 15s;
+}
+
+.morph-3 {
+  animation-name: blob-morph-3;
+  animation-duration: 10s;
+}
 
 /* ── Geometric accent float ──────────────────────────── */
 @keyframes accent-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50%       { transform: translateY(-10px) rotate(6deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(6deg);
+  }
 }
 
 /* ── Clip-path reveal helper (used by Reveal variant="clip") ─ */
-.clip-hidden { clip-path: inset(0 0 100% 0); }
-.clip-visible { clip-path: inset(0 0 0% 0); }
+.clip-hidden {
+  clip-path: inset(0 0 100% 0);
+}
+
+.clip-visible {
+  clip-path: inset(0 0 0% 0);
+}

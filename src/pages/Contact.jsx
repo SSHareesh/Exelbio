@@ -12,11 +12,11 @@ export default function Contact() {
 
   return (
     <>
-      <section className="relative bg-ink text-paper pt-40 pb-24 grain">
+      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal-tint" /> Contact
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+              <span className="inline-block h-px w-6 bg-teal" /> Contact
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -25,7 +25,7 @@ export default function Contact() {
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-paper/70 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               Most first conversations run thirty minutes and cost nothing — a walk
               through the protocol with a senior statistician before anything is scoped.
             </p>

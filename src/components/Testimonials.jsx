@@ -43,7 +43,7 @@ export default function Testimonials({ items }) {
                     : "flex-[10_0_0%] items-center justify-start shadow-[0_8px_24px_-12px_rgba(16,28,44,0.05)] hover:bg-surface/80"
                 } ${
                   isDark
-                    ? "bg-ink border-ink/20 text-paper"
+                    ? "bg-blue-bg border-blue-deep text-ink"
                     : "bg-surface border-ink/10 text-ink"
                 }`}
                 style={{
@@ -69,9 +69,9 @@ export default function Testimonials({ items }) {
                       "{t.quote}"
                     </blockquote>
                   </div>
-                  <figcaption className={`mt-8 pt-6 border-t ${isDark ? "border-paper/10" : "border-ink/10"} text-sm`}>
+                  <figcaption className={`mt-8 pt-6 border-t ${isDark ? "border-ink/10" : "border-ink/10"} text-sm`}>
                     <span className="block font-medium text-base">{t.name}</span>
-                    <span className={`block text-xs mt-0.5 ${isDark ? "text-paper/60" : "text-ink-soft"}`}>
+                    <span className={`block text-xs mt-0.5 ${isDark ? "text-ink-soft" : "text-ink-soft"}`}>
                       {t.org}
                     </span>
                   </figcaption>
@@ -90,7 +90,7 @@ export default function Testimonials({ items }) {
                   <div
                     className={`flex h-10 w-10 items-center justify-center rounded-full font-mono text-xs font-bold ${
                       isDark
-                        ? "bg-paper/10 text-paper"
+                        ? "bg-ink/5 text-ink"
                         : "bg-ink/5 text-ink"
                     }`}
                   >
@@ -100,14 +100,14 @@ export default function Testimonials({ items }) {
                   {/* Vertical Line */}
                   <div
                     className={`flex-grow my-6 w-px ${
-                      isDark ? "bg-paper/10" : "bg-ink/10"
+                      isDark ? "bg-ink/10" : "bg-ink/10"
                     }`}
                   />
 
                   {/* Vertical Rotated Text */}
                   <span
                     className={`font-mono text-[10px] uppercase tracking-[0.25em] whitespace-nowrap ${
-                      isDark ? "text-paper/40" : "text-ink/40"
+                      isDark ? "text-ink/40" : "text-ink/40"
                     }`}
                     style={{
                       writingMode: "vertical-rl",
@@ -145,7 +145,7 @@ export default function Testimonials({ items }) {
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className={`w-full rounded-3xl border p-8 flex flex-col justify-between min-h-[320px] shadow-md ${
                 activeIndex % 2 === 0
-                  ? "bg-ink border-ink/20 text-paper"
+                  ? "bg-blue-bg border-blue-deep text-ink"
                   : "bg-surface border-ink/10 text-ink"
               }`}
             >
@@ -159,9 +159,9 @@ export default function Testimonials({ items }) {
                   "{items[activeIndex].quote}"
                 </blockquote>
               </div>
-              <figcaption className={`mt-6 pt-4 border-t ${activeIndex % 2 === 0 ? "border-paper/10" : "border-ink/10"} text-xs`}>
+              <figcaption className={`mt-6 pt-4 border-t border-ink/10 text-xs`}>
                 <span className="block font-medium text-sm">{items[activeIndex].name}</span>
-                <span className={`block mt-0.5 ${activeIndex % 2 === 0 ? "text-paper/60" : "text-ink-soft"}`}>
+                <span className={`block mt-0.5 text-ink-soft`}>
                   {items[activeIndex].org}
                 </span>
               </figcaption>

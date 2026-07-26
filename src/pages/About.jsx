@@ -23,11 +23,11 @@ const values = [
 export default function About() {
   return (
     <>
-      <section className="relative bg-ink text-paper pt-40 pb-24 grain overflow-hidden">
+      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain overflow-hidden">
         <div className="container-page relative">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal-tint" /> About Lumetrics
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+              <span className="inline-block h-px w-6 bg-teal" /> About Lumetrics
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -36,7 +36,7 @@ export default function About() {
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-paper/70 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               The statistician who designs your trial's analysis should be the one
               standing behind it — at the DSMB table, in an FDA meeting, and in the
               footnotes of the CSR.

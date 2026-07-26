@@ -8,15 +8,15 @@ export default function ContactCTA({
   description = "The earliest design decisions are the hardest ones to undo. Talk to a senior biostatistician before your next milestone, not after.",
 }) {
   return (
-    <section className="relative overflow-hidden bg-ink text-paper py-24 grain">
-      <div className="absolute inset-0 text-teal-tint/40">
+    <section className="relative overflow-hidden bg-blue-bg text-ink py-24 grain">
+      <div className="absolute inset-0 text-teal/20">
         <ScatterField className="absolute -right-24 top-1/2 -translate-y-1/2 w-[560px] h-[440px] hidden lg:block" opacity={0.5} />
       </div>
       <div className="container-page relative">
         <div className="max-w-xl">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal-tint mb-4 flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal-tint" /> {eyebrow}
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal mb-4 flex items-center gap-2">
+              <span className="inline-block h-px w-6 bg-teal" /> {eyebrow}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
@@ -25,12 +25,12 @@ export default function ContactCTA({
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 text-paper/65 text-[1.05rem] leading-relaxed">{description}</p>
+            <p className="mt-5 text-ink-soft text-[1.05rem] leading-relaxed">{description}</p>
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button to="/contact" variant="inverse">Talk to a statistician</Button>
-              <Button to="/services" variant="outline-light" icon={false}>Browse services</Button>
+              <Button to="/contact" variant="primary">Talk to a statistician</Button>
+              <Button to="/services" variant="outline" icon={false}>Browse services</Button>
             </div>
           </Reveal>
         </div>
