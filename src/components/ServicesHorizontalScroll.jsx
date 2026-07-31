@@ -121,10 +121,10 @@ function InfoCard({ service, index, tone, className = "" }) {
         WebkitBackdropFilter: "blur(18px)",
         background: isOdd
           ? "linear-gradient(135deg, rgba(245,243,238,0.72) 0%, rgba(236,233,225,0.55) 100%)"
-          : "linear-gradient(135deg, rgba(235,244,254,0.72) 0%, rgba(220,234,248,0.55) 100%)",
+          : "linear-gradient(135deg, rgba(140,211,213,0.72) 0%, rgba(112,200,202,0.55) 100%)",
         border: isOdd
           ? "1px solid rgba(16,28,44,0.10)"
-          : "1px solid rgba(200,221,240,0.70)",
+          : "1px solid rgba(84,188,190,0.70)",
         boxShadow: isOdd
           ? "0 4px 24px -8px rgba(16,28,44,0.10), inset 0 1px 0 rgba(255,255,255,0.60)"
           : "0 8px 32px -12px rgba(16,28,44,0.12), inset 0 1px 0 rgba(255,255,255,0.75)",
@@ -203,8 +203,8 @@ function InfoCard({ service, index, tone, className = "" }) {
 */
 
 const PANEL_W_DESKTOP = "lg:w-[300px]";
-const INFO_CARD_H = "lg:h-[272px]";
-const IMAGE_CARD_H = "lg:h-[168px]";
+const INFO_CARD_H = "lg:h-[262px]";
+const IMAGE_CARD_H = "lg:h-[158px]";
 const PANEL_W_MOBILE = "w-[82vw] sm:w-[74vw]";
 
 function ServicePanel({ service, index }) {
@@ -277,8 +277,11 @@ export default function ServicesHorizontalScroll() {
           <motion.div
             ref={trackRef}
             style={{ x }}
-            className="flex items-stretch gap-6 pl-6 md:pl-12 pr-[10vw]"
+            className="flex items-stretch gap-6"
           >
+            {/* Left spacer — aligns first card with container-page content edge */}
+            <div className="shrink-0 pointer-events-none" style={{ width: "max(calc((100vw - 1280px) / 2 + 3rem), 3rem)" }} />
+
             {/* Intro card — stays oversized by design */}
             <div className="h-[460px] shrink-0">
               <IntroCard />
@@ -291,8 +294,8 @@ export default function ServicesHorizontalScroll() {
               </div>
             ))}
 
-            {/* End spacer for padding right */}
-            {/* <div className="w-12 md:w-24 lg:w-[10vw] shrink-0 pointer-events-none" /> */}
+            {/* Right spacer — ensures last card has breathing room */}
+            <div className="shrink-0 pointer-events-none" style={{ width: "max(calc((100vw - 1280px) / 2 + 3rem), 3rem)" }} />
           </motion.div>
         </div>
       </section>

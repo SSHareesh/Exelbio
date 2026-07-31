@@ -47,7 +47,7 @@ export default function Home() {
                 <SectionHeading
                   eyebrow="Who we are"
                   title="A CRO built by statisticians, still run by statisticians."
-                  description="Lumetrics was founded in 2013 by three biostatisticians who kept seeing the same problem elsewhere: the person who designed a trial's analysis was rarely the person defending it in front of a review team. We built the company around fixing that."
+                  description="ExelBio was founded in 2013 by three biostatisticians who kept seeing the same problem elsewhere: the person who designed a trial's analysis was rarely the person defending it in front of a review team. We built the company around fixing that."
                 />
               </motion.div>
 
@@ -109,7 +109,7 @@ export default function Home() {
       <section className="relative bg-blue-bg text-ink py-28 grain">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Why Lumetrics"
+            eyebrow="Why ExelBio"
             title="What sponsors notice after the first study."
             description="Not a list of certifications — the operational habits that actually change how a trial goes."
           />

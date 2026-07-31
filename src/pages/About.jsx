@@ -27,7 +27,7 @@ export default function About() {
         <div className="container-page relative">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal" /> About Lumetrics
+              <span className="inline-block h-px w-6 bg-teal" /> About ExelBio
             </p>
           </Reveal>
           <Reveal delay={0.08}>

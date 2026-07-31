@@ -41,17 +41,17 @@ export default function HeroParallax() {
   });
 
   /* Background layers — dramatic lag = appears distant */
-  const blobY      = useTransform(scrollYProgress, [0, 1], ["0%", "52%"]);
-  const particleY  = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
-  const scatterY   = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const blobY = useTransform(scrollYProgress, [0, 1], ["0%", "52%"]);
+  const particleY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
+  const scatterY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
 
   /* Content layers — subtle lag = slight depth */
-  const headingY   = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const descY      = useTransform(scrollYProgress, [0, 1], ["0%",  "7%"]);
-  const buttonsY   = useTransform(scrollYProgress, [0, 1], ["0%",  "5%"]);
+  const headingY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const descY = useTransform(scrollYProgress, [0, 1], ["0%", "7%"]);
+  const buttonsY = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
 
   /* Fade-outs on exit */
-  const bgOpacity      = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.2]);
+  const bgOpacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.2]);
   const contentOpacity = useTransform(scrollYProgress, [0.55, 0.85], [1, 0]);
 
   /* Heading subtle scale on scroll */
@@ -84,19 +84,19 @@ export default function HeroParallax() {
 
     const handleMouseMove = (e) => {
       const rect = hero.getBoundingClientRect();
-      rawMouseX.set((e.clientX - rect.left - rect.width  / 2) / rect.width);
-      rawMouseY.set((e.clientY - rect.top  - rect.height / 2) / rect.height);
+      rawMouseX.set((e.clientX - rect.left - rect.width / 2) / rect.width);
+      rawMouseY.set((e.clientY - rect.top - rect.height / 2) / rect.height);
     };
     const handleMouseLeave = () => {
       rawMouseX.set(0);
       rawMouseY.set(0);
     };
 
-    hero.addEventListener("mousemove",  handleMouseMove,  { passive: true });
+    hero.addEventListener("mousemove", handleMouseMove, { passive: true });
     hero.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     return () => {
-      hero.removeEventListener("mousemove",  handleMouseMove);
+      hero.removeEventListener("mousemove", handleMouseMove);
       hero.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [rawMouseX, rawMouseY]);
@@ -108,8 +108,8 @@ export default function HeroParallax() {
       className="relative flex min-h-screen items-center overflow-hidden text-ink"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse 90% 60% at 20% 0%, #dceaf8 0%, #ebf4fe 55%), " +
-          "radial-gradient(ellipse 60% 50% at 90% 100%, #c8ddf0 0%, transparent 60%)",
+          "radial-gradient(ellipse 90% 60% at 20% 0%, #88e0e1ff 0%, #d0f4f5 55%), " +
+          "radial-gradient(ellipse 60% 50% at 90% 100%, #96d9d9ff 0%, transparent 60%)",
       }}
     >
       {/* ══════════════════════════════════════════════════════════
@@ -229,7 +229,7 @@ export default function HeroParallax() {
             transition={{ duration: 0.8, delay: 0.32 }}
             className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
           >
-            Lumetrics pairs sponsors with named biostatisticians — not account teams — for
+            ExelBio pairs sponsors with named biostatisticians — not account teams — for
             trial design, CDISC programming, data management, and submission-ready
             reporting. The same statistician who writes your SAP defends it at review.
           </motion.p>

@@ -36,19 +36,29 @@ export default function Navbar() {
       <div className="container-page">
         <div
           className={cn(
-            "flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500 border",
+            "flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500",
             scrolled
-              ? "bg-paper/75 backdrop-blur-xl border-ink/10 shadow-[0_8px_30px_-12px_rgba(16,28,44,0.25)]"
-              : "bg-paper/30 backdrop-blur-md border-paper/40"
+              ? "shadow-[0_8px_30px_-12px_rgba(16,28,44,0.18)]"
+              : ""
           )}
+          style={{
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            background: scrolled
+              ? "linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.60) 100%)"
+              : "linear-gradient(135deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.15) 100%)",
+            border: scrolled
+              ? "1px solid rgba(255,255,255,0.65)"
+              : "1px solid rgba(255,255,255,0.35)",
+          }}
         >
           <Link to="/" className="flex items-center gap-2.5 shrink-0">
             <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-ink text-paper font-display text-sm">
-              L
+              E
               <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 rounded-full bg-teal border-2 border-paper" />
             </span>
             <span className="font-display text-lg tracking-tight text-ink">
-              Lumetrics<span className="text-teal">.</span>
+              ExelBio<span className="text-teal">.</span>
             </span>
           </Link>
 
@@ -94,7 +104,15 @@ export default function Navbar() {
                         item.label === "Services" ? "w-[560px]" : "w-[380px]"
                       )}
                     >
-                      <div className="rounded-2xl border border-ink/10 bg-surface/95 backdrop-blur-xl shadow-[0_24px_60px_-20px_rgba(16,28,44,0.35)] p-3">
+                      <div
+                        className="rounded-2xl shadow-[0_24px_60px_-20px_rgba(16,28,44,0.18)] p-3"
+                        style={{
+                          backdropFilter: "blur(20px)",
+                          WebkitBackdropFilter: "blur(20px)",
+                          background: "linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 100%)",
+                          border: "1px solid rgba(255,255,255,0.70)",
+                        }}
+                      >
                         {item.label === "Services" ? (
                           <div className="grid grid-cols-2 gap-1">
                             {services.map((s) => {
@@ -164,7 +182,15 @@ export default function Navbar() {
             className="lg:hidden overflow-hidden"
           >
             <div className="container-page pt-3 pb-6">
-              <div className="rounded-3xl border border-ink/10 bg-paper/95 backdrop-blur-xl shadow-xl p-5">
+              <div
+                className="rounded-3xl shadow-xl p-5"
+                style={{
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 100%)",
+                  border: "1px solid rgba(255,255,255,0.70)",
+                }}
+              >
                 <nav className="flex flex-col divide-y divide-ink/10">
                   {primaryNav.map((item) => (
                     <Link

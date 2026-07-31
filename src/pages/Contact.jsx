@@ -51,7 +51,7 @@ export default function Contact() {
                     </li>
                     <li className="flex items-center gap-3.5">
                       <Mail size={18} className="text-teal shrink-0" />
-                      <span className="text-ink-soft">hello@Lumetricsbiostat.example</span>
+                      <span className="text-ink-soft">hello@ExelBiobiostat.example</span>
                     </li>
                   </ul>
                   <div className="mt-10 pt-8 border-t border-ink/10">

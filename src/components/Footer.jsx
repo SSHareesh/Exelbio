@@ -20,15 +20,15 @@ function XGlyph(props) {
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-dim text-ink grain">
+    <footer className="bg-paper text-ink grain">
       <div className="container-page py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <Link to="/" className="flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-paper font-display text-sm">
-                L
+                E
               </span>
-              <span className="font-display text-lg text-ink tracking-tight">Lumetrics<span className="text-teal">.</span></span>
+              <span className="font-display text-lg text-ink tracking-tight">ExelBio<span className="text-teal">.</span></span>
             </Link>
             <p className="mt-5 text-sm leading-relaxed max-w-xs text-ink-soft">
               A biomedical statistics CRO built around one idea: the statistician who
@@ -41,7 +41,7 @@ export default function Footer() {
               <a href="#" aria-label="X (formerly Twitter)" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
                 <XGlyph />
               </a>
-              <a href="mailto:hello@Lumetricsbiostat.example" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
+              <a href="mailto:hello@ExelBiobiostat.example" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
                 <Mail size={16} />
               </a>
             </div>
@@ -83,14 +83,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="shrink-0 text-teal" />
-                <span>hello@Lumetricsbiostat.example</span>
+                <span>hello@ExelBiobiostat.example</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 pt-8 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink/40">
-          <p>© {new Date().getFullYear()} Lumetrics Biostatistics, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ExelBio Biostatistics, Inc. All rights reserved.</p>
           <p className="font-mono">n = trials analyzed with care, not just volume.</p>
         </div>
       </div>

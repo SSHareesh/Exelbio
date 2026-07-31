@@ -1,4 +1,4 @@
-# Lumetrics Biostatistics — Marketing Website
+# ExelBio Biostatistics — Marketing Website
 
 A premium marketing site for a biomedical statistics CRO, built with React,
 Tailwind CSS v4, React Router, Framer Motion, and Lucide React.
