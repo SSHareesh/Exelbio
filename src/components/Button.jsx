@@ -6,9 +6,9 @@ const base =
   "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 focus-ring";
 
 const variants = {
-  primary: "bg-ink text-paper hover:bg-teal-deep",
-  inverse: "bg-paper text-ink hover:bg-white",
-  outline: "border border-ink/25 text-ink hover:border-ink hover:bg-ink/5",
+  primary: "bg-ink text-paper hover:bg-teal",
+  inverse: "bg-paper text-ink hover:bg-teal hover:text-paper",
+  outline: "border border-ink/25 text-ink hover:border-teal hover:text-teal hover:bg-teal/5",
   "outline-light": "border border-paper/40 text-paper hover:border-paper hover:bg-paper/10",
   ghost: "text-ink hover:text-teal",
 };

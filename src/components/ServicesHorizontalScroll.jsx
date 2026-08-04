@@ -143,8 +143,8 @@ function InfoCard({ service, index, tone, className = "" }) {
         }}
       />
 
-      {/* Header row */}
-      <div className="relative min-h-0 overflow-hidden">
+      {/* Header row — scrollable when card height shrinks */}
+      <div className="relative flex-grow min-h-0 overflow-y-auto pr-1.5 [scrollbar-width:thin]">
         <div className="flex justify-end">
           <span className="font-mono text-[0.65rem] text-ink/40">
             0{index + 1}
@@ -154,7 +154,7 @@ function InfoCard({ service, index, tone, className = "" }) {
         <h3 className="mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight text-ink">
           {service.title}
         </h3>
-        <p className="mt-1.5 text-[0.82rem] leading-relaxed line-clamp-3 text-ink-soft">
+        <p className="mt-1.5 text-[0.82rem] leading-relaxed text-ink-soft">
           {service.short}
         </p>
 
@@ -203,8 +203,8 @@ function InfoCard({ service, index, tone, className = "" }) {
 */
 
 const PANEL_W_DESKTOP = "lg:w-[300px]";
-const INFO_CARD_H = "lg:h-[262px]";
-const IMAGE_CARD_H = "lg:h-[158px]";
+const INFO_CARD_H = "lg:h-[264px]";
+const IMAGE_CARD_H = "lg:h-[160px]";
 const PANEL_W_MOBILE = "w-[82vw] sm:w-[74vw]";
 
 function ServicePanel({ service, index }) {
@@ -268,7 +268,7 @@ export default function ServicesHorizontalScroll() {
         className="relative hidden lg:block"
         style={{ height: `calc(100vh + ${distance}px)` }}
       >
-        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden bg-paper-dim/40">
+        <div className="sticky top-0 h-screen flex flex-col justify-center pt-12 pr-16 overflow-hidden bg-paper-dim/40">
           <div className="container-page mb-8">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
               <span className="inline-block h-px w-6 bg-teal" /> Scroll to explore
@@ -277,12 +277,9 @@ export default function ServicesHorizontalScroll() {
           <motion.div
             ref={trackRef}
             style={{ x }}
-            className="flex items-stretch gap-6"
+            className="flex items-stretch gap-6 pl-6 md:pl-12 pr-[10vw]"
           >
-            {/* Left spacer — aligns first card with container-page content edge */}
-            <div className="shrink-0 pointer-events-none" style={{ width: "max(calc((100vw - 1280px) / 2 + 3rem), 3rem)" }} />
-
-            {/* Intro card — stays oversized by design */}
+            {/* Intro card */}
             <div className="h-[460px] shrink-0">
               <IntroCard />
             </div>
@@ -294,8 +291,8 @@ export default function ServicesHorizontalScroll() {
               </div>
             ))}
 
-            {/* Right spacer — ensures last card has breathing room */}
-            <div className="shrink-0 pointer-events-none" style={{ width: "max(calc((100vw - 1280px) / 2 + 3rem), 3rem)" }} />
+            {/* Right spacer */}
+            <div className="w-12 md:w-24 lg:w-[10vw] shrink-0 pointer-events-none" />
           </motion.div>
         </div>
       </section>
