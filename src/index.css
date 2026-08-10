@@ -10,20 +10,28 @@
   --color-paper: #f5f3ee;
   --color-paper-dim: #ece9e1;
   --color-surface: #ffffff;
-  --color-teal: #0c6b5e;
+
+  /* ── Primary navy-teal palette ─────────────────────── */
+  --color-primary: #0d2f3f;
+  --color-primary-mid: #0f4a5c;
+  --color-teal: #0e9cb8;
+  --color-teal-deep: #0d2f3f;
+  --color-teal-tint: #e0f6fa;
+
+  /* ── Accent & secondary ──────────────────────────── */
   --color-green: #037010;
   --color-yellow: #c1873b;
-  --color-teal-deep: #084b42;
-  --color-teal-tint: #e7f0ec;
   --color-indigo: #2e3a66;
   --color-indigo-tint: #eceef5;
   --color-amber: #c1873b;
   --color-amber-tint: #f6ecdc;
   --color-line: #ded9cd;
 
-  --color-blue-bg: #d0f4f5;
-  --color-blue-dim: #70c8ca;
-  --color-blue-deep: #54bcbe;
+  /* ── Light secondary (was cyan tint, now warm off-white teal) */
+  --color-blue-bg: #1a4358ff;
+  --color-blue-dim: #1a4d64;
+  --color-blue-deep: #0e9cb8;
+  --color-gold: #ffc700;
 }
 
 html {

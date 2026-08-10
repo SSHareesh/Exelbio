@@ -31,12 +31,12 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight text-white">
               Twelve years of one idea, applied consistently.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
               The statistician who designs your trial's analysis should be the one
               standing behind it — at the DSMB table, in an FDA meeting, and in the
               footnotes of the CSR.

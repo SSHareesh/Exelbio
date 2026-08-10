@@ -62,19 +62,19 @@ function DashedCircle({ size }) {
 
 /* ─── Accent descriptors ─────────────────────────────────────── */
 const accents = [
-  { type: "triangle",  x: "7%",  y: "22%", size: 15, delay: 0.55, dur: 4.2,  rotate: 12 },
-  { type: "hex",       x: "83%", y: "28%", size: 22, delay: 1.1,  dur: 5.5,  rotate: 0  },
-  { type: "plus",      x: "13%", y: "68%", size: 14, delay: 0.85, dur: 3.8,  rotate: 0  },
-  { type: "circle",   x: "74%", y: "62%", size: 20, delay: 1.4,  dur: 4.8,  rotate: 0  },
-  { type: "triangle",  x: "55%", y: "10%", size: 11, delay: 0.7,  dur: 3.5,  rotate: -8 },
-  { type: "hex",       x: "30%", y: "82%", size: 16, delay: 1.6,  dur: 5.0,  rotate: 30 },
-  { type: "plus",      x: "88%", y: "72%", size: 12, delay: 0.4,  dur: 4.0,  rotate: 45 },
+  { type: "triangle", x: "7%", y: "22%", size: 15, delay: 0.55, dur: 4.2, rotate: 12 },
+  { type: "hex", x: "83%", y: "28%", size: 22, delay: 1.1, dur: 5.5, rotate: 0 },
+  { type: "plus", x: "13%", y: "68%", size: 14, delay: 0.85, dur: 3.8, rotate: 0 },
+  { type: "circle", x: "74%", y: "62%", size: 20, delay: 1.4, dur: 4.8, rotate: 0 },
+  { type: "triangle", x: "55%", y: "10%", size: 11, delay: 0.7, dur: 3.5, rotate: -8 },
+  { type: "hex", x: "30%", y: "82%", size: 16, delay: 1.6, dur: 5.0, rotate: 30 },
+  { type: "plus", x: "88%", y: "72%", size: 12, delay: 0.4, dur: 4.0, rotate: 45 },
   /* small dot clusters — statistical flavour */
-  { type: "dot", x: "64%", y: "13%", size: 4.5, delay: 0.3,  dur: 3.2, rotate: 0 },
-  { type: "dot", x: "69%", y: "19%", size: 3,   delay: 0.5,  dur: 4.0, rotate: 0 },
+  { type: "dot", x: "64%", y: "13%", size: 4.5, delay: 0.3, dur: 3.2, rotate: 0 },
+  { type: "dot", x: "69%", y: "19%", size: 3, delay: 0.5, dur: 4.0, rotate: 0 },
   { type: "dot", x: "59%", y: "21%", size: 3.5, delay: 0.65, dur: 3.6, rotate: 0 },
-  { type: "dot", x: "19%", y: "78%", size: 4,   delay: 1.0,  dur: 4.1, rotate: 0 },
-  { type: "dot", x: "24%", y: "73%", size: 3,   delay: 1.2,  dur: 3.7, rotate: 0 },
+  { type: "dot", x: "19%", y: "78%", size: 4, delay: 1.0, dur: 4.1, rotate: 0 },
+  { type: "dot", x: "24%", y: "73%", size: 3, delay: 1.2, dur: 3.7, rotate: 0 },
 ];
 
 export default function GeometricAccents() {
@@ -94,18 +94,18 @@ export default function GeometricAccents() {
           }}
           transition={{
             opacity: { duration: 0.9, delay: a.delay, ease: "easeOut" },
-            scale:   { duration: 0.9, delay: a.delay, ease: [0.22, 1, 0.36, 1] },
-            y:       { duration: a.dur, delay: a.delay, repeat: Infinity, ease: "easeInOut" },
-            rotate:  { duration: a.dur * 1.6, delay: a.delay, repeat: Infinity, ease: "easeInOut" },
+            scale: { duration: 0.9, delay: a.delay, ease: [0.22, 1, 0.36, 1] },
+            y: { duration: a.dur, delay: a.delay, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: a.dur * 1.6, delay: a.delay, repeat: Infinity, ease: "easeInOut" },
           }}
         >
           {a.type === "triangle" && <Triangle size={a.size} />}
-          {a.type === "hex"      && <Hexagon  size={a.size} />}
-          {a.type === "plus"     && <Plus     size={a.size} />}
-          {a.type === "circle"   && <DashedCircle size={a.size} />}
+          {a.type === "hex" && <Hexagon size={a.size} />}
+          {a.type === "plus" && <Plus size={a.size} />}
+          {a.type === "circle" && <DashedCircle size={a.size} />}
           {a.type === "dot" && (
             <div
-              className="rounded-full bg-teal/40"
+              className="rounded-full bg-gold"
               style={{ width: a.size, height: a.size }}
             />
           )}

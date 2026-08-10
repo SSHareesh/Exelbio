@@ -53,7 +53,7 @@ export default function Resources() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
               Notes from the desk, not the marketing team.
             </h1>
           </Reveal>

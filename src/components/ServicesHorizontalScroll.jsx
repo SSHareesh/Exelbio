@@ -28,7 +28,7 @@ const accentBorder = {
 /* ─── Intro card ─── */
 function IntroCard() {
   return (
-    <div className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-blue-deep bg-blue-bg text-ink p-9 sm:p-11">
+    <div className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-blue-dim/40 bg-blue-dim text-white p-9 sm:p-11">
       <div>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
           <span className="inline-block h-px w-6 bg-teal" /> What we do
@@ -36,14 +36,14 @@ function IntroCard() {
         <h3 className="mt-6 font-display text-[2.6rem] sm:text-5xl leading-[1.06] tracking-tight">
           Six&nbsp;disciplines.<br />One&nbsp;team.
         </h3>
-        <p className="mt-6 text-ink-soft leading-relaxed max-w-xs text-[0.95rem]">
+        <p className="mt-6 text-white/60 leading-relaxed max-w-xs text-[0.95rem]">
           Each service runs independently or as one accountable engagement — staffed by
           the same statisticians from consultation through submission.
         </p>
       </div>
       <div className="mt-10 space-y-3">
-        <div className="h-px w-full bg-ink/10" />
-        <p className="text-ink/40 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
+        <div className="h-px w-full bg-white/10" />
+        <p className="text-white/40 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
           Scroll to explore →
         </p>
         <div className="mt-6">

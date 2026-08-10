@@ -20,12 +20,12 @@ export default function Contact() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
               Tell us about the study. We'll tell you what it needs.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
               Most first conversations run thirty minutes and cost nothing — a walk
               through the protocol with a senior statistician before anything is scoped.
             </p>

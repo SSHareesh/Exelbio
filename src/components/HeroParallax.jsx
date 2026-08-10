@@ -105,11 +105,11 @@ export default function HeroParallax() {
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden text-ink"
+      className="relative flex min-h-screen items-center overflow-hidden text-white"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse 90% 60% at 20% 0%, #88e0e1ff 0%, #d0f4f5 55%), " +
-          "radial-gradient(ellipse 60% 50% at 90% 100%, #96d9d9ff 0%, transparent 60%)",
+          "radial-gradient(ellipse 100% 80% at 15% 0%, #0f4a5c 0%, #06111cff 45%, #1a4358ff 100%), " +
+          "radial-gradient(ellipse 60% 55% at 85% 100%, #0e4a60 0%, transparent 65%)",
       }}
     >
       {/* ══════════════════════════════════════════════════════════
@@ -128,17 +128,17 @@ export default function HeroParallax() {
           transition={{ duration: 2.6, ease: "easeOut" }}
         >
           <MorphingBlob
-            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal/10 blur-[90px]"
+            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal/20 blur-[90px]"
             animIndex={1}
             delay="0s"
           />
           <MorphingBlob
-            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-indigo/10 blur-[80px]"
+            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-white/5 blur-[80px]"
             animIndex={2}
             delay="4s"
           />
           <MorphingBlob
-            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/[0.06] blur-[110px]"
+            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/[0.12] blur-[110px]"
             animIndex={3}
             delay="8s"
           />
@@ -169,7 +169,7 @@ export default function HeroParallax() {
           ═════════════════════════════════════════════════════════ */}
       <motion.div
         style={{ x: scat3X, y: scat3Y }}
-        className="absolute inset-0 pointer-events-none text-teal/30"
+        className="absolute inset-0 pointer-events-none text-white/15"
         aria-hidden="true"
       >
         <motion.div
@@ -227,7 +227,7 @@ export default function HeroParallax() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.32 }}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
+            className="mt-7 max-w-xl text-lg leading-relaxed text-white/90"
           >
             ExelBio pairs sponsors with named biostatisticians — not account teams — for
             trial design, CDISC programming, data management, and submission-ready
@@ -263,7 +263,7 @@ export default function HeroParallax() {
 
       {/* Scroll caret */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/30"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         style={{ opacity: contentOpacity }}

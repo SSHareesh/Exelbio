@@ -15,12 +15,12 @@ export default function ServicesIndex() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
               Six disciplines. One accountable team.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
               Engage one service or all six — every engagement is staffed by the same
               people from consultation through submission.
             </p>
@@ -34,7 +34,7 @@ export default function ServicesIndex() {
             eyebrow="Full catalog"
             title="Find the service your study needs right now"
           />
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
             {services.map((s, i) => (
               <ServiceCard key={s.slug} service={s} index={i} />
             ))}

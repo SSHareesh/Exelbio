@@ -54,19 +54,19 @@ export default function ServicePage() {
         <div className="container-page relative">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ink/5 text-teal">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-teal">
                 <Icon size={20} />
               </span>
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal">{detail.eyebrow}</p>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.08] tracking-tight text-white">
               {detail.title}
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 max-w-xl text-lg text-ink-soft leading-relaxed">{detail.tagline}</p>
+            <p className="mt-5 max-w-xl text-lg text-white/65 leading-relaxed">{detail.tagline}</p>
           </Reveal>
         </div>
       </section>
@@ -128,9 +128,9 @@ export default function ServicePage() {
 
       <section className="bg-blue-bg text-ink py-24 grain">
         <div className="container-page">
-          <SectionHeading eyebrow="Workflow" title="How the engagement runs" />
+          <SectionHeading eyebrow="Workflow" title="How the engagement runs" light={true} />
           <div className="mt-16">
-            <WorkflowSteps steps={detail.workflow} />
+            <WorkflowSteps steps={detail.workflow} dark={true} />
           </div>
         </div>
       </section>

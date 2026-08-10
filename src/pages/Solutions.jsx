@@ -30,12 +30,12 @@ export default function Solutions() {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
               Built around your phase and indication, not a one-size template.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
               A Phase I dose-escalation study and a Phase III cardiovascular outcomes
               trial need different statistical instincts. We staff accordingly.
             </p>

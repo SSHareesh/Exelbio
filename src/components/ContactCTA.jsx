@@ -20,12 +20,12 @@ export default function ContactCTA({
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.1] tracking-tight">
+            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.1] tracking-tight text-white">
               {title}
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 text-ink-soft text-[1.05rem] leading-relaxed">{description}</p>
+            <p className="mt-5 text-white/65 text-[1.05rem] leading-relaxed">{description}</p>
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-wrap items-center gap-4">

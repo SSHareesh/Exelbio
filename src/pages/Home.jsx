@@ -112,10 +112,11 @@ export default function Home() {
             eyebrow="Why ExelBio"
             title="What sponsors notice after the first study."
             description="Not a list of certifications — the operational habits that actually change how a trial goes."
+            light={true}
           />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {strengths.map((item, i) => (
-              <StrengthCard key={item.title} item={item} index={i} />
+              <StrengthCard key={item.title} item={item} index={i} dark={true} />
             ))}
           </div>
         </div>
