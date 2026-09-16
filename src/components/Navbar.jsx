@@ -52,15 +52,16 @@ export default function Navbar() {
               : "1px solid rgba(255,255,255,0.35)",
           }}
         >
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-ink text-paper font-display text-sm">
-              E
-              <span className="absolute -right-0.5 -bottom-0.5 h-2 w-2 rounded-full bg-teal border-2 border-paper" />
-            </span>
-            <span className="font-display text-lg tracking-tight text-ink">
-              ExelBio<span className="text-teal">.</span>
-            </span>
+          <Link to="/" className="flex items-center shrink-0 focus-ring rounded-lg py-1">
+            <img
+              src="/logo-transparent.png"
+              alt="ExelBio — Insight | Innovation | Impact"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
+              width="160"
+              height="40"
+            />
           </Link>
+
 
           <nav className="hidden lg:flex items-center gap-1">
             {primaryNav.map((item) => (
@@ -75,8 +76,8 @@ export default function Navbar() {
                   end={item.to === "/"}
                   className={({ isActive }) =>
                     cn(
-                      "flex items-center gap-1 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 focus-ring",
-                      isActive ? "text-yellow" : "text-ink/75 hover:text-ink"
+                      "flex items-center gap-1 px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200 focus-ring",
+                      isActive ? "text-teal" : "text-primary hover:text-teal"
                     )
                   }
                 >
@@ -105,12 +106,11 @@ export default function Navbar() {
                       )}
                     >
                       <div
-                        className="rounded-2xl shadow-[0_24px_60px_-20px_rgba(16,28,44,0.18)] p-3"
+                        className="rounded-2xl shadow-[0_24px_60px_-20px_rgba(18,59,109,0.18)] p-3 border border-border"
                         style={{
                           backdropFilter: "blur(20px)",
                           WebkitBackdropFilter: "blur(20px)",
-                          background: "linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 100%)",
-                          border: "1px solid rgba(255,255,255,0.70)",
+                          background: "linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(244,248,250,0.92) 100%)",
                         }}
                       >
                         {item.label === "Services" ? (
@@ -123,11 +123,11 @@ export default function Navbar() {
                                   to={`/services/${s.slug}`}
                                   className="flex items-start gap-3 rounded-xl p-3 hover:bg-teal-tint transition-colors duration-200 group"
                                 >
-                                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-tint text-indigo group-hover:bg-teal group-hover:text-white transition-colors duration-200">
+                                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-tint text-teal group-hover:bg-teal group-hover:text-white transition-colors duration-200">
                                     <Icon size={16} />
                                   </span>
                                   <span>
-                                    <span className="block text-sm font-medium text-ink">{s.title}</span>
+                                    <span className="block text-sm font-semibold text-primary">{s.title}</span>
                                     <span className="block text-xs text-ink-soft mt-0.5 leading-snug">{s.short}</span>
                                   </span>
                                 </Link>
@@ -142,7 +142,7 @@ export default function Navbar() {
                                 to={r.to}
                                 className="rounded-xl p-3 hover:bg-teal-tint transition-colors duration-200"
                               >
-                                <span className="block text-sm font-medium text-ink">{r.label}</span>
+                                <span className="block text-sm font-semibold text-primary">{r.label}</span>
                                 <span className="block text-xs text-ink-soft mt-0.5">{r.desc}</span>
                               </Link>
                             ))}
@@ -158,9 +158,10 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Button to="/contact" variant="primary">
-              Talk to a statistician
+              Talk to us
             </Button>
           </div>
+
 
           <button
             className="lg:hidden p-2 text-ink focus-ring rounded-full"
@@ -218,9 +219,10 @@ export default function Navbar() {
                 </div>
                 <div className="mt-5">
                   <Button to="/contact" variant="primary" className="w-full justify-center">
-                    Talk to a statistician
+                    Talk to us
                   </Button>
                 </div>
+
               </div>
             </div>
           </motion.div>

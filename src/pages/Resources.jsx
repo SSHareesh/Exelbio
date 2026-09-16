@@ -45,30 +45,30 @@ const webinars = [
 export default function Resources() {
   return (
     <>
-      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
+      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain border-b border-border">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
               <span className="inline-block h-px w-6 bg-teal" /> Resources
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
               Notes from the desk, not the marketing team.
             </h1>
           </Reveal>
         </div>
       </section>
 
-      <section id="case-studies" className="bg-paper py-28 scroll-mt-28">
+      <section id="case-studies" className="bg-white py-28 scroll-mt-28 border-b border-border">
         <div className="container-page">
           <SectionHeading eyebrow="Case studies" title="Real trials, real analysis problems" icon={FlaskConical} />
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.08}>
-                <div className="h-full rounded-2xl border border-ink/10 p-7 flex flex-col">
-                  <span className="font-mono text-xs uppercase tracking-wide text-teal">{c.tag}</span>
-                  <h3 className="mt-3 font-display text-lg text-ink leading-snug">{c.title}</h3>
+                <div className="h-full rounded-2xl border border-border bg-paper p-7 flex flex-col shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
+                  <span className="font-mono text-xs uppercase tracking-wide text-teal font-bold">{c.tag}</span>
+                  <h3 className="mt-3 font-display text-lg text-primary font-bold leading-snug">{c.title}</h3>
                   <p className="mt-3 text-sm text-ink-soft leading-relaxed">{c.detail}</p>
                 </div>
               </Reveal>
@@ -77,16 +77,16 @@ export default function Resources() {
         </div>
       </section>
 
-      <section id="notes" className="bg-paper-dim/40 py-28 scroll-mt-28">
+      <section id="notes" className="bg-paper py-28 scroll-mt-28 border-b border-border">
         <div className="container-page">
           <SectionHeading eyebrow="Regulatory notes" title="Short reads on statistical guidance" />
-          <div className="mt-14 divide-y divide-ink/10 border-t border-b border-ink/10">
+          <div className="mt-14 divide-y divide-border border-t border-b border-border">
             {notes.map((n, i) => (
               <Reveal key={n.title} delay={i * 0.06}>
                 <a href="#" className="flex items-center justify-between gap-6 py-6 group">
                   <span className="flex items-center gap-4">
                     <ScrollText size={18} className="text-teal shrink-0" />
-                    <span className="font-display text-lg text-ink group-hover:text-teal transition-colors">{n.title}</span>
+                    <span className="font-display text-lg text-primary font-bold group-hover:text-teal transition-colors">{n.title}</span>
                   </span>
                   <span className="font-mono text-xs text-ink-soft uppercase tracking-wide shrink-0">{n.tag}</span>
                 </a>
@@ -96,14 +96,14 @@ export default function Resources() {
         </div>
       </section>
 
-      <section id="glossary" className="bg-paper py-28 scroll-mt-28">
+      <section id="glossary" className="bg-white py-28 scroll-mt-28 border-b border-border">
         <div className="container-page">
           <SectionHeading eyebrow="Glossary" title="Plain-language definitions" icon={BookOpen} />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {glossary.map((g, i) => (
               <Reveal key={g.term} delay={(i % 3) * 0.06}>
-                <div className="rounded-xl bg-teal-tint/60 p-5">
-                  <p className="font-mono text-sm text-teal-deep">{g.term}</p>
+                <div className="rounded-xl bg-teal-tint/70 border border-teal/15 p-5 shadow-xs">
+                  <p className="font-mono text-sm text-primary font-bold">{g.term}</p>
                   <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{g.def}</p>
                 </div>
               </Reveal>
@@ -112,16 +112,16 @@ export default function Resources() {
         </div>
       </section>
 
-      <section id="webinars" className="bg-paper-dim/40 py-28 scroll-mt-28">
+      <section id="webinars" className="bg-paper py-28 scroll-mt-28">
         <div className="container-page">
           <SectionHeading eyebrow="Webinars" title="Recorded sessions with our team" />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {webinars.map((w, i) => (
               <Reveal key={w.title} delay={i * 0.08}>
-                <div className="rounded-2xl bg-surface border border-ink/10 p-6 flex flex-col items-start gap-4">
+                <div className="rounded-2xl bg-surface border border-border p-6 flex flex-col items-start gap-4 shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
                   <PlayCircle size={28} className="text-teal" strokeWidth={1.5} />
                   <div>
-                    <h3 className="font-display text-base text-ink leading-snug">{w.title}</h3>
+                    <h3 className="font-display text-base text-primary font-bold leading-snug">{w.title}</h3>
                     <p className="mt-1 font-mono text-xs text-ink-soft">{w.length}</p>
                   </div>
                 </div>
@@ -130,6 +130,7 @@ export default function Resources() {
           </div>
         </div>
       </section>
+
 
       <ContactCTA />
     </>

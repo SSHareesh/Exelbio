@@ -12,33 +12,34 @@ export default function StrengthCard({ item, index, dark = false }) {
         className={cn(
           "h-full rounded-2xl border p-6 transition-all duration-300",
           dark
-            ? "border-paper/10 bg-paper/[0.03] hover:bg-paper/[0.06] hover:border-paper/20 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)]"
-            : "border-paper-dim bg-surface/60 hover:bg-surface hover:shadow-[0_20px_40px_-20px_rgba(16,28,44,0.25)]"
+            ? "border-white/15 bg-white/[0.06] hover:bg-white/[0.10] hover:border-panel-accent/40 shadow-sm"
+            : "border-border bg-surface hover:border-teal/40 hover:shadow-[0_18px_40px_rgba(18,59,109,0.08)]"
         )}
       >
         <span className={cn(
           "relative flex h-11 w-11 items-center justify-center rounded-full border",
-          dark ? "border-teal/40 text-teal-tint" : "border-teal/30 text-teal"
+          dark ? "border-panel-accent/40 bg-panel-accent/10 text-panel-accent" : "border-teal/30 bg-teal-tint text-teal"
         )}>
           <Icon size={18} />
           <span className={cn(
             "absolute inset-0 rounded-full border scale-125 opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-            dark ? "border-teal/30" : "border-teal/20"
+            dark ? "border-panel-accent/30" : "border-teal/20"
           )} />
         </span>
         <h3 className={cn(
           "mt-5 font-display text-lg tracking-tight",
-          dark ? "text-paper" : "text-ink"
+          dark ? "text-white font-semibold" : "text-primary font-bold"
         )}>
           {item.title}
         </h3>
         <p className={cn(
           "mt-2 text-sm leading-relaxed",
-          dark ? "text-paper/70" : "text-ink-soft"
+          dark ? "text-panel-muted" : "text-ink-soft"
         )}>
           {item.detail}
         </p>
       </div>
+
     </Reveal>
   );
 }

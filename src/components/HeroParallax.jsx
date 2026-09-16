@@ -105,12 +105,7 @@ export default function HeroParallax() {
   return (
     <section
       ref={heroRef}
-      className="relative flex min-h-screen items-center overflow-hidden text-white"
-      style={{
-        backgroundImage:
-          "radial-gradient(ellipse 100% 80% at 15% 0%, #0f4a5c 0%, #06111cff 45%, #1a4358ff 100%), " +
-          "radial-gradient(ellipse 60% 55% at 85% 100%, #0e4a60 0%, transparent 65%)",
-      }}
+      className="relative flex min-h-screen items-center overflow-hidden text-ink hero-radial-bg"
     >
       {/* ══════════════════════════════════════════════════════════
           LAYER 1 — Morphing blobs  (mouse outer, scroll inner)
@@ -128,17 +123,17 @@ export default function HeroParallax() {
           transition={{ duration: 2.6, ease: "easeOut" }}
         >
           <MorphingBlob
-            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal/20 blur-[90px]"
+            className="absolute -left-44 -top-48 h-[700px] w-[700px] bg-teal/15 blur-[90px]"
             animIndex={1}
             delay="0s"
           />
           <MorphingBlob
-            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-white/5 blur-[80px]"
+            className="absolute -right-60 -bottom-24 h-[600px] w-[600px] bg-green/10 blur-[80px]"
             animIndex={2}
             delay="4s"
           />
           <MorphingBlob
-            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/[0.12] blur-[110px]"
+            className="absolute left-[40%] top-[25%] h-[380px] w-[380px] -translate-x-1/2 bg-teal/10 blur-[110px]"
             animIndex={3}
             delay="8s"
           />
@@ -169,7 +164,7 @@ export default function HeroParallax() {
           ═════════════════════════════════════════════════════════ */}
       <motion.div
         style={{ x: scat3X, y: scat3Y }}
-        className="absolute inset-0 pointer-events-none text-white/15"
+        className="absolute inset-0 pointer-events-none text-primary/10"
         aria-hidden="true"
       >
         <motion.div
@@ -180,7 +175,7 @@ export default function HeroParallax() {
           transition={{ duration: 1.8, ease: "easeOut", delay: 0.15 }}
         >
           <ScatterField
-            className="absolute right-[-10%] top-1/2 h-[640px] w-[820px] -translate-y-1/2 opacity-70"
+            className="absolute right-[-10%] top-1/2 h-[640px] w-[820px] -translate-y-1/2 opacity-40"
           />
           <GeometricAccents />
         </motion.div>
@@ -199,10 +194,10 @@ export default function HeroParallax() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-teal flex items-center gap-2"
+          className="font-mono text-xs uppercase tracking-[0.25em] text-teal font-extrabold flex items-center gap-2"
         >
           <span className="inline-block h-px w-8 bg-teal" />
-          Biomedical Statistics CRO
+          Biometrics • Data • Insight
         </motion.p>
 
         {/* ── LAYER 4: Heading ───────────────────────────────────── */}
@@ -214,10 +209,10 @@ export default function HeroParallax() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 max-w-3xl font-display text-[2.6rem] leading-[1.06] tracking-tight sm:text-6xl lg:text-[4.6rem]"
+            className="mt-6 max-w-3xl font-display text-[2.6rem] leading-[1.06] tracking-tight sm:text-6xl lg:text-[4.6rem] text-primary"
           >
-            Statistics that hold up<br className="hidden sm:block" />
-            under regulatory review.
+            Turning clinical data into<br className="hidden sm:block" />{" "}
+            <span className="text-teal">meaningful insight.</span>
           </motion.h1>
         </motion.div>
 
@@ -227,11 +222,11 @@ export default function HeroParallax() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.32 }}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-white/90"
+            className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
           >
-            ExelBio pairs sponsors with named biostatisticians — not account teams — for
-            trial design, CDISC programming, data management, and submission-ready
-            reporting. The same statistician who writes your SAP defends it at review.
+            ExelBio delivers high-quality biometrics and clinical data solutions that help
+            life-science teams make confident decisions and move programmes forward.
+            The same statistician who writes your SAP defends it at regulatory review.
           </motion.p>
         </motion.div>
 
@@ -243,9 +238,9 @@ export default function HeroParallax() {
             transition={{ duration: 0.8, delay: 0.44 }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <Button to="/contact" variant="primary">Talk to a statistician</Button>
-            <Button to="/services" variant="outline" icon={false}>
-              Explore services
+            <Button to="/contact" variant="primary">Explore our services</Button>
+            <Button to="/about" variant="outline" icon={false}>
+              Discover ExelBio
             </Button>
           </motion.div>
         </motion.div>
@@ -263,7 +258,7 @@ export default function HeroParallax() {
 
       {/* Scroll caret */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/30"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         style={{ opacity: contentOpacity }}
@@ -272,4 +267,5 @@ export default function HeroParallax() {
       </motion.div>
     </section>
   );
+
 }

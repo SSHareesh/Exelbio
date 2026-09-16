@@ -5,34 +5,48 @@
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --color-ink: #101c2c;
-  --color-ink-soft: #3c4a5c;
-  --color-paper: #f5f3ee;
-  --color-paper-dim: #ece9e1;
+  /* ── Core neutrals ─────────────────────────────────── */
+  --color-ink: #172b3a;
+  --color-ink-soft: #64748b;
+  --color-paper: #f4f8fa;
+  --color-paper-dim: #eaf0f4;
   --color-surface: #ffffff;
+  --color-border: #dce7ed;
+  --color-line: #dce7ed;
 
-  /* ── Primary navy-teal palette ─────────────────────── */
-  --color-primary: #0d2f3f;
-  --color-primary-mid: #0f4a5c;
-  --color-teal: #0e9cb8;
-  --color-teal-deep: #0d2f3f;
-  --color-teal-tint: #e0f6fa;
+  /* ── Primary navy & dark backgrounds ───────────────── */
+  --color-primary: #123b6d;
+  --color-primary-mid: #1c5a8f;
+  --color-footer: #0d2c50;
 
-  /* ── Accent & secondary ──────────────────────────── */
-  --color-green: #037010;
-  --color-yellow: #c1873b;
-  --color-indigo: #2e3a66;
-  --color-indigo-tint: #eceef5;
-  --color-amber: #c1873b;
-  --color-amber-tint: #f6ecdc;
-  --color-line: #ded9cd;
+  /* ── Primary teal accent ───────────────────────────── */
+  --color-teal: #12a7a5;
+  --color-teal-hover: #0e9290;
+  --color-teal-tint: #e8f7f7;
+  --color-teal-card: #edf7f8;
+  --color-teal-deep: #123b6d;
 
-  /* ── Light secondary (was cyan tint, now warm off-white teal) */
-  --color-blue-bg: #1a4358ff;
-  --color-blue-dim: #1a4d64;
-  --color-blue-deep: #0e9cb8;
-  --color-gold: #ffc700;
+  /* ── Panel contrast accents (for dark navy panels) ─── */
+  --color-panel-accent: #63d6d3;
+  --color-panel-muted: #d9e7f2;
+  --color-footer-muted: #c5d5e3;
+
+  /* ── Green accent & badges ─────────────────────────── */
+  --color-green: #20b765;
+  --color-green-tint: #e9f8ef;
+
+  /* ── Backwards compatibility aliases ───────────────── */
+  --color-indigo: #123b6d;
+  --color-indigo-tint: #e8f7f7;
+  --color-amber: #12a7a5;
+  --color-amber-tint: #edf7f8;
+  --color-yellow: #12a7a5;
+  --color-blue-bg: #f4f8fa;
+  --color-blue-dim: #123b6d;
+  --color-blue-deep: #12a7a5;
+  --color-gold: #20b765;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -121,6 +135,19 @@ body {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* ── Reference clinical hero & card background helpers ───── */
+.hero-radial-bg {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(18, 167, 165, 0.12), transparent 28%),
+    radial-gradient(circle at 12% 80%, rgba(32, 183, 101, 0.08), transparent 25%),
+    var(--color-paper);
+}
+
+.hero-card-gradient {
+  background: linear-gradient(145deg, #ffffff, #edf7f8);
+}
+
 
 /* ── Morphing blob keyframes ─────────────────────────── */
 @keyframes blob-morph-1 {

@@ -23,20 +23,20 @@ const values = [
 export default function About() {
   return (
     <>
-      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain overflow-hidden">
+      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain overflow-hidden border-b border-border">
         <div className="container-page relative">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
               <span className="inline-block h-px w-6 bg-teal" /> About ExelBio
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight text-white">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight text-primary font-bold">
               Twelve years of one idea, applied consistently.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               The statistician who designs your trial's analysis should be the one
               standing behind it — at the DSMB table, in an FDA meeting, and in the
               footnotes of the CSR.
@@ -45,13 +45,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-paper py-24">
+      <section className="bg-white py-20 border-b border-border">
         <div className="container-page">
           <StatStrip stats={stats} />
         </div>
       </section>
 
-      <section className="bg-paper py-8 pb-28">
+      <section className="bg-paper py-28 border-b border-border">
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
             <div className="lg:col-span-4">
@@ -62,11 +62,11 @@ export default function About() {
               />
             </div>
             <div className="lg:col-span-8">
-              <div className="relative pl-8 border-l border-ink/10">
+              <div className="relative pl-8 border-l border-border">
                 {timeline.map((t, i) => (
                   <Reveal key={t.year} delay={i * 0.08} className="relative pb-10 last:pb-0">
                     <span className="absolute -left-[calc(2rem+4px)] top-1 h-2.5 w-2.5 rounded-full bg-teal" />
-                    <p className="font-mono text-sm text-teal">{t.year}</p>
+                    <p className="font-mono text-sm text-teal font-bold">{t.year}</p>
                     <p className="mt-1.5 text-ink-soft leading-relaxed max-w-xl">{t.event}</p>
                   </Reveal>
                 ))}
@@ -76,7 +76,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-paper-dim/40 py-28">
+      <section className="bg-white py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="How we operate"
@@ -85,12 +85,12 @@ export default function About() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
-                <div className="flex gap-5 rounded-2xl border border-ink/10 bg-surface p-7">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-indigo-tint text-indigo">
+                <div className="flex gap-5 rounded-2xl border border-border bg-surface p-7 shadow-sm hover:border-teal/30 hover:shadow-[0_18px_40px_rgba(18,59,109,0.06)] transition-all">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-teal-tint text-teal">
                     <v.icon size={18} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-ink tracking-tight">{v.title}</h3>
+                    <h3 className="font-display text-lg text-primary font-bold tracking-tight">{v.title}</h3>
                     <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{v.detail}</p>
                   </div>
                 </div>
@@ -99,6 +99,7 @@ export default function About() {
           </div>
         </div>
       </section>
+
 
       <ContactCTA
         eyebrow="Meet the team"

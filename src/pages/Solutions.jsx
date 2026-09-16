@@ -22,20 +22,20 @@ const byIndication = [
 export default function Solutions() {
   return (
     <>
-      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
+      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain border-b border-border">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
               <span className="inline-block h-px w-6 bg-teal" /> Solutions
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
               Built around your phase and indication, not a one-size template.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               A Phase I dose-escalation study and a Phase III cardiovascular outcomes
               trial need different statistical instincts. We staff accordingly.
             </p>
@@ -43,14 +43,14 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="bg-paper py-28">
+      <section className="bg-white py-28 border-b border-border">
         <div className="container-page">
           <SectionHeading eyebrow="By trial phase" title="Support at every stage of development" />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {byPhase.map((p, i) => (
               <Reveal key={p.phase} delay={i * 0.08}>
-                <div className="h-full rounded-2xl border border-ink/10 p-7">
-                  <p className="font-mono text-xs text-teal uppercase tracking-widest">{p.phase}</p>
+                <div className="h-full rounded-2xl border border-border bg-paper p-7 shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
+                  <p className="font-mono text-xs text-teal uppercase tracking-widest font-bold">{p.phase}</p>
                   <p className="mt-3 text-ink-soft leading-relaxed text-sm">{p.detail}</p>
                 </div>
               </Reveal>
@@ -59,18 +59,18 @@ export default function Solutions() {
         </div>
       </section>
 
-      <section className="bg-paper-dim/40 py-28">
+      <section className="bg-paper py-28">
         <div className="container-page">
           <SectionHeading eyebrow="By indication" title="Therapeutic areas we work in most" />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {byIndication.map((item, i) => (
               <Reveal key={item.name} delay={(i % 3) * 0.08}>
-                <div className="flex items-start gap-4 rounded-2xl bg-surface border border-ink/10 p-6 h-full">
+                <div className="flex items-start gap-4 rounded-2xl bg-surface border border-border p-6 h-full shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-tint text-teal">
                     <item.icon size={18} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-ink">{item.name}</h3>
+                    <h3 className="font-display text-lg text-primary font-bold">{item.name}</h3>
                     <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{item.detail}</p>
                   </div>
                 </div>
@@ -79,6 +79,7 @@ export default function Solutions() {
           </div>
         </div>
       </section>
+
 
       <ContactCTA
         eyebrow="Not sure where you fit"

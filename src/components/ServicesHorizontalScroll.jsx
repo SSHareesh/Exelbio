@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { LineChart, Terminal, Database, Users, FileCheck2, PenLine } from "lucide-react";
+
 import { services } from "../data/nav";
-import ServiceIllustration from "./ServiceIllustration";
 import Button from "./Button";
 
-const iconMap = { LineChart, Terminal, Database, Users, FileCheck2, PenLine };
 const tones = ["teal", "indigo", "amber"];
+
 
 /* ─── Design tokens (matching site palette) ─── */
 const tintBg = {
@@ -28,22 +27,25 @@ const accentBorder = {
 /* ─── Intro card ─── */
 function IntroCard() {
   return (
-    <div className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-blue-dim/40 bg-blue-dim text-white p-9 sm:p-11">
+    <div
+      className="flex h-full w-[86vw] sm:w-[480px] shrink-0 flex-col justify-between rounded-3xl border border-white/10 text-white p-9 sm:p-11 shadow-lg"
+      style={{ background: "linear-gradient(135deg, #123B6D 0%, #1C5A8F 100%)" }}
+    >
       <div>
-        <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
-          <span className="inline-block h-px w-6 bg-teal" /> What we do
+        <p className="font-mono text-xs uppercase tracking-[0.22em] text-panel-accent flex items-center gap-2 font-bold">
+          <span className="inline-block h-px w-6 bg-panel-accent" /> What we do
         </p>
-        <h3 className="mt-6 font-display text-[2.6rem] sm:text-5xl leading-[1.06] tracking-tight">
+        <h3 className="mt-6 font-display text-[2.6rem] sm:text-5xl leading-[1.06] tracking-tight font-bold">
           Six&nbsp;disciplines.<br />One&nbsp;team.
         </h3>
-        <p className="mt-6 text-white/60 leading-relaxed max-w-xs text-[0.95rem]">
+        <p className="mt-6 text-panel-muted leading-relaxed max-w-xs text-[0.95rem]">
           Each service runs independently or as one accountable engagement — staffed by
           the same statisticians from consultation through submission.
         </p>
       </div>
       <div className="mt-10 space-y-3">
-        <div className="h-px w-full bg-white/10" />
-        <p className="text-white/40 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
+        <div className="h-px w-full bg-white/15" />
+        <p className="text-white/60 font-mono text-[0.7rem] uppercase tracking-[0.18em]">
           Scroll to explore →
         </p>
         <div className="mt-6">
@@ -94,7 +96,7 @@ function ImageCard({ service, tone, className = "" }) {
       whileHover={{ y: -4, scale: 1.015 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       style={{
-        boxShadow: "0 2px 12px 0 rgba(16,28,44,0.07)",
+        boxShadow: "0 4px 18px 0 rgba(18,59,109,0.08)",
       }}
       whileInView={undefined}
     >
@@ -120,14 +122,12 @@ function InfoCard({ service, index, tone, className = "" }) {
         backdropFilter: "blur(18px)",
         WebkitBackdropFilter: "blur(18px)",
         background: isOdd
-          ? "linear-gradient(135deg, rgba(245,243,238,0.72) 0%, rgba(236,233,225,0.55) 100%)"
-          : "linear-gradient(135deg, rgba(140,211,213,0.72) 0%, rgba(112,200,202,0.55) 100%)",
+          ? "linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(244,248,250,0.85) 100%)"
+          : "linear-gradient(135deg, rgba(232,247,247,0.90) 0%, rgba(237,247,248,0.80) 100%)",
         border: isOdd
-          ? "1px solid rgba(16,28,44,0.10)"
-          : "1px solid rgba(84,188,190,0.70)",
-        boxShadow: isOdd
-          ? "0 4px 24px -8px rgba(16,28,44,0.10), inset 0 1px 0 rgba(255,255,255,0.60)"
-          : "0 8px 32px -12px rgba(16,28,44,0.12), inset 0 1px 0 rgba(255,255,255,0.75)",
+          ? "1px solid rgba(220,231,237,0.90)"
+          : "1px solid rgba(18,167,165,0.30)",
+        boxShadow: "0 8px 32px -12px rgba(18,59,109,0.10), inset 0 1px 0 rgba(255,255,255,0.8)",
       }}
       initial={{ scale: 1 }}
       whileHover={{ y: -5, scale: 1.012 }}
@@ -137,26 +137,25 @@ function InfoCard({ service, index, tone, className = "" }) {
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl"
         style={{
-          background: isOdd
-            ? "linear-gradient(135deg, rgba(255,255,255,0.45) 0%, transparent 55%)"
-            : "linear-gradient(135deg, rgba(255,255,255,0.60) 0%, transparent 55%)",
+          background: "linear-gradient(135deg, rgba(255,255,255,0.60) 0%, transparent 55%)",
         }}
       />
 
       {/* Header row — scrollable when card height shrinks */}
       <div className="relative flex-grow min-h-0 overflow-y-auto pr-1.5 [scrollbar-width:thin]">
         <div className="flex justify-end">
-          <span className="font-mono text-[0.65rem] text-ink/40">
+          <span className="font-mono text-[0.65rem] text-ink-soft font-semibold">
             0{index + 1}
           </span>
         </div>
 
-        <h3 className="mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight text-ink">
+        <h3 className="mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight text-primary font-bold">
           {service.title}
         </h3>
         <p className="mt-1.5 text-[0.82rem] leading-relaxed text-ink-soft">
           {service.short}
         </p>
+
 
         {/* Bullet highlights */}
         {bullets.length > 0 && (
@@ -298,15 +297,16 @@ export default function ServicesHorizontalScroll() {
       </section>
 
       {/* ── Mobile / small tablet: native horizontal swipe, no scroll-jacking ── */}
-      <section className="relative bg-paper-dim/40 py-20 lg:hidden">
+      <section className="relative bg-paper py-20 lg:hidden border-b border-border">
         <div className="container-page mb-8">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
             <span className="inline-block h-px w-6 bg-teal" /> What we do
           </p>
-          <h2 className="mt-4 font-display text-3xl leading-[1.1] tracking-tight text-ink">
+          <h2 className="mt-4 font-display text-3xl leading-[1.1] tracking-tight text-primary font-bold">
             Services
           </h2>
         </div>
+
         <div className="flex gap-5 overflow-x-auto px-6 pb-5 snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {/* Intro card */}
           <div className="snap-start h-[480px] shrink-0">

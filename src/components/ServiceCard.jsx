@@ -164,7 +164,7 @@ export default function ServiceCard({ service, index }) {
     <Reveal delay={(index % 3) * 0.08} className="h-full">
       <Link
         to={`/services/${service.slug}`}
-        className="group relative flex h-full flex-col rounded-3xl border border-ink/10 bg-surface overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-[0_28px_60px_-24px_rgba(16,28,44,0.35)]"
+        className="group relative flex h-full flex-col rounded-3xl border border-border bg-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-[0_20px_45px_-20px_rgba(18,59,109,0.14)]"
       >
         {/* ── Image placeholder ──────────────────────────────── */}
         <div
@@ -189,20 +189,21 @@ export default function ServiceCard({ service, index }) {
         <div className="flex flex-1 flex-col justify-between p-6">
           <div>
             <div className="flex items-center justify-between">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-tint text-indigo transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-tint text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
                 <Icon size={18} />
               </span>
-              <span className="font-mono text-xs text-ink-soft/50">0{index + 1}</span>
+              <span className="font-mono text-xs text-ink-soft/60">0{index + 1}</span>
             </div>
-            <h3 className="mt-4 font-display text-xl text-ink tracking-tight">{service.title}</h3>
+            <h3 className="mt-4 font-display text-xl text-primary font-bold tracking-tight">{service.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">{service.short}</p>
           </div>
-          <div className="mt-6 flex items-center gap-2 text-sm font-medium text-teal">
+          <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-teal">
             Learn more
             <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
           </div>
         </div>
       </Link>
+
     </Reveal>
   );
 }

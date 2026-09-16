@@ -47,31 +47,31 @@ export default function ServicePage() {
 
   return (
     <>
-      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain overflow-hidden">
+      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain overflow-hidden border-b border-border">
         <div className="absolute inset-0 text-teal/20">
-          <ScatterField className="absolute right-[-15%] top-1/2 h-[560px] w-[720px] -translate-y-1/2 opacity-60" />
+          <ScatterField className="absolute right-[-15%] top-1/2 h-[560px] w-[720px] -translate-y-1/2 opacity-40" />
         </div>
         <div className="container-page relative">
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-teal">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-teal-tint text-teal shadow-xs">
                 <Icon size={20} />
               </span>
-              <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal">{detail.eyebrow}</p>
+              <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal font-bold">{detail.eyebrow}</p>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.08] tracking-tight text-white">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.08] tracking-tight text-primary font-bold">
               {detail.title}
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 max-w-xl text-lg text-white/65 leading-relaxed">{detail.tagline}</p>
+            <p className="mt-5 max-w-xl text-lg text-ink-soft leading-relaxed">{detail.tagline}</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-paper py-24">
+      <section className="bg-white py-24 border-b border-border">
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
             <div className="lg:col-span-5">
@@ -86,14 +86,14 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-paper-dim/40 py-24">
+      <section className="bg-paper py-24 border-b border-border">
         <div className="container-page">
           <SectionHeading eyebrow="Key features" title="What's included" />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {detail.features.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.07}>
-                <div className="rounded-2xl bg-surface border border-ink/10 p-6 h-full">
-                  <h3 className="font-display text-lg text-ink">{f.title}</h3>
+                <div className="rounded-2xl bg-surface border border-border p-6 h-full shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
+                  <h3 className="font-display text-lg text-primary font-bold">{f.title}</h3>
                   <p className="mt-2 text-sm text-ink-soft leading-relaxed">{f.detail}</p>
                 </div>
               </Reveal>
@@ -102,7 +102,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24">
+      <section className="bg-white py-24 border-b border-border">
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
             <div className="lg:col-span-5">
@@ -113,8 +113,8 @@ export default function ServicePage() {
                 {detail.benefits.map((b, i) => (
                   <Reveal key={b} delay={i * 0.06}>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-tint text-teal-deep">
-                        <Check size={12} />
+                      <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-tint text-green font-bold">
+                        <Check size={12} strokeWidth={3} />
                       </span>
                       <span className="text-ink-soft leading-relaxed">{b}</span>
                     </li>
@@ -126,7 +126,10 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-blue-bg text-ink py-24 grain">
+      <section
+        className="relative py-24 grain text-white"
+        style={{ background: "linear-gradient(115deg, #123B6D, #1C5A8F)" }}
+      >
         <div className="container-page">
           <SectionHeading eyebrow="Workflow" title="How the engagement runs" light={true} />
           <div className="mt-16">
@@ -135,7 +138,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24">
+      <section className="bg-white py-24 border-b border-border">
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
             <div className="lg:col-span-5">
@@ -150,7 +153,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-paper-dim/40 py-24">
+      <section className="bg-paper py-24">
         <div className="container-page">
           <SectionHeading eyebrow="Related" title="Other services sponsors pair this with" />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -160,12 +163,12 @@ export default function ServicePage() {
                 <Link
                   key={s.slug}
                   to={`/services/${s.slug}`}
-                  className="group rounded-2xl border border-ink/10 bg-surface p-6 hover:border-teal/40 transition-colors duration-300"
+                  className="group rounded-2xl border border-border bg-surface p-6 hover:border-teal/40 hover:shadow-md transition-all duration-300"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-tint text-indigo group-hover:bg-teal group-hover:text-white transition-colors duration-300">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-tint text-teal group-hover:bg-teal group-hover:text-white transition-colors duration-300">
                     <OIcon size={16} />
                   </span>
-                  <h3 className="mt-4 font-display text-base text-ink">{s.title}</h3>
+                  <h3 className="mt-4 font-display text-base text-primary font-bold">{s.title}</h3>
                   <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{s.short}</p>
                 </Link>
               );
@@ -173,6 +176,7 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
+
 
       <ContactCTA
         title={`Ready to talk about ${detail.title.toLowerCase()}?`}

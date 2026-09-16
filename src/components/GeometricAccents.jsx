@@ -105,9 +105,10 @@ export default function GeometricAccents() {
           {a.type === "circle" && <DashedCircle size={a.size} />}
           {a.type === "dot" && (
             <div
-              className="rounded-full bg-gold"
+              className="rounded-full bg-green"
               style={{ width: a.size, height: a.size }}
             />
+
           )}
         </motion.div>
       ))}

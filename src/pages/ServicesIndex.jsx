@@ -7,26 +7,27 @@ import { services } from "../data/nav";
 export default function ServicesIndex() {
   return (
     <>
-      <section className="relative bg-blue-bg text-ink pt-40 pb-24 grain">
+      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain border-b border-border">
         <div className="container-page">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
               <span className="inline-block h-px w-6 bg-teal" /> Services
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-white">
+            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
               Six disciplines. One accountable team.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-white/65 text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
               Engage one service or all six — every engagement is staffed by the same
               people from consultation through submission.
             </p>
           </Reveal>
         </div>
       </section>
+
 
       <section className="bg-paper py-28">
         <div className="container-page">

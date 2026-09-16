@@ -60,7 +60,7 @@ export default function LoadingScreen() {
             position: "fixed",
             inset: 0,
             zIndex: 200,
-            backgroundColor: "#f5f3ee",
+            backgroundColor: "#F4F8FA",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -79,10 +79,10 @@ export default function LoadingScreen() {
             style={{
               position: "absolute",
               inset: 0,
-              opacity: 0.04,
+              opacity: 0.03,
               backgroundImage:
-                "repeating-linear-gradient(90deg, #101c2c 0px, #101c2c 1px, transparent 1px, transparent 80px), " +
-                "repeating-linear-gradient(0deg, #101c2c 0px, #101c2c 1px, transparent 1px, transparent 80px)",
+                "repeating-linear-gradient(90deg, #123B6D 0px, #123B6D 1px, transparent 1px, transparent 80px), " +
+                "repeating-linear-gradient(0deg, #123B6D 0px, #123B6D 1px, transparent 1px, transparent 80px)",
             }}
           />
 
@@ -91,26 +91,17 @@ export default function LoadingScreen() {
             style={{ opacity: innerOpacity, y: innerY }}
             className="relative z-10 flex flex-col items-center gap-5"
           >
-            {/* Logo mark */}
-            <motion.div
-              className="relative flex h-16 w-16 items-center justify-center rounded-full bg-ink font-display text-2xl text-paper"
-              initial={{ scale: 0.6, opacity: 0, rotate: -15 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
-              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            >
-              E
-              <span className="absolute -right-1 -bottom-1 h-4 w-4 rounded-full bg-teal border-[2.5px] border-paper" />
-            </motion.div>
+            {/* Official Logo */}
+            <motion.img
+              src="/logo-transparent.png"
+              alt="ExelBio"
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain"
+              initial={{ scale: 0.75, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            />
 
-            {/* Brand name */}
-            <motion.p
-              className="font-display text-[2rem] tracking-tight text-ink"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            >
-              ExelBio<span className="text-teal">.</span>
-            </motion.p>
+
 
             {/* Tagline */}
             <motion.p

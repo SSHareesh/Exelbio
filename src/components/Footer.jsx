@@ -20,49 +20,54 @@ function XGlyph(props) {
 
 export default function Footer() {
   return (
-    <footer className="bg-paper text-ink grain">
+    <footer className="bg-footer text-panel-muted grain">
       <div className="container-page py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-paper font-display text-sm">
-                E
-              </span>
-              <span className="font-display text-lg text-ink tracking-tight">ExelBio<span className="text-teal">.</span></span>
+            <Link to="/" className="inline-block bg-white px-3.5 py-2 rounded-xl shadow-sm hover:opacity-95 transition-opacity">
+              <img
+                src="/logo.png"
+                alt="ExelBio — Insight | Innovation | Impact"
+                className="h-7 sm:h-8 w-auto object-contain"
+                width="140"
+                height="32"
+              />
             </Link>
-            <p className="mt-5 text-sm leading-relaxed max-w-xs text-ink-soft">
+
+
+            <p className="mt-5 text-sm leading-relaxed max-w-xs text-footer-muted">
               A biomedical statistics CRO built around one idea: the statistician who
               designs the analysis should be the one who defends it.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
+              <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
                 <LinkedInGlyph />
               </a>
-              <a href="#" aria-label="X (formerly Twitter)" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
+              <a href="#" aria-label="X (formerly Twitter)" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
                 <XGlyph />
               </a>
-              <a href="mailto:hello@ExelBiobiostat.example" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-ink/15 hover:border-teal hover:text-teal transition-colors">
+              <a href="mailto:hello@ExelBiobiostat.example" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
                 <Mail size={16} />
               </a>
             </div>
           </div>
 
           <div className="md:col-span-2">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/40 mb-4">Quick links</p>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80 font-bold mb-4">Quick links</p>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/about" className="hover:text-teal transition-colors">About</Link></li>
-              <li><Link to="/solutions" className="hover:text-teal transition-colors">Solutions</Link></li>
-              <li><Link to="/resources" className="hover:text-teal transition-colors">Resources</Link></li>
-              <li><Link to="/contact" className="hover:text-teal transition-colors">Contact</Link></li>
+              <li><Link to="/about" className="text-footer-muted hover:text-teal transition-colors">About</Link></li>
+              <li><Link to="/solutions" className="text-footer-muted hover:text-teal transition-colors">Solutions</Link></li>
+              <li><Link to="/resources" className="text-footer-muted hover:text-teal transition-colors">Resources</Link></li>
+              <li><Link to="/contact" className="text-footer-muted hover:text-teal transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div className="md:col-span-3">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/40 mb-4">Services</p>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80 font-bold mb-4">Services</p>
             <ul className="space-y-2.5 text-sm">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/services/${s.slug}`} className="hover:text-teal transition-colors">
+                  <Link to={`/services/${s.slug}`} className="text-footer-muted hover:text-teal transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -71,25 +76,25 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/40 mb-4">Contact</p>
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80 font-bold mb-4">Contact</p>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
                 <MapPin size={15} className="mt-0.5 shrink-0 text-teal" />
-                <span>401 Laurel Street, Suite 220<br />Cambridge, MA 02141</span>
+                <span className="text-footer-muted">401 Laurel Street, Suite 220<br />Cambridge, MA 02141</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={15} className="shrink-0 text-teal" />
-                <span>+1 (617) 555-0148</span>
+                <span className="text-footer-muted">+1 (617) 555-0148</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="shrink-0 text-teal" />
-                <span>hello@ExelBiobiostat.example</span>
+                <span className="text-footer-muted">hello@ExelBiobiostat.example</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink/40">
+        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-footer-muted/60">
           <p>© {new Date().getFullYear()} ExelBio Biostatistics, Inc. All rights reserved.</p>
           <p className="font-mono">n = trials analyzed with care, not just volume.</p>
         </div>
@@ -97,3 +102,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function StatStrip({ stats }) {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ink/10 rounded-2xl overflow-hidden border border-ink/10">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border shadow-[0_8px_30px_-12px_rgba(18,59,109,0.08)]">
       {stats.map((s, i) => (
         <Reveal key={s.label} delay={i * 0.06} className="h-full">
           <div className="h-full bg-surface px-6 py-8">

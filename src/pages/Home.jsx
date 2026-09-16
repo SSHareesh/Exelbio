@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import LoadingScreen from "../components/LoadingScreen";
+// import LoadingScreen from "../components/LoadingScreen";
 import HeroParallax from "../components/HeroParallax";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
@@ -16,7 +16,7 @@ export default function Home() {
           INTRO — 100 vh spacer + fixed loading overlay.
           Scrolling through the spacer drives the overlay off screen.
           ═════════════════════════════════════════════════════════ */}
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
 
       {/* ══════════════════════════════════════════════════════════
           HERO — sits immediately after the spacer in the DOM.
@@ -28,16 +28,12 @@ export default function Home() {
       {/* ══════════════════════════════════════════════════════════
           ABOUT
           ═════════════════════════════════════════════════════════ */}
-      <section className="relative bg-paper py-28">
+      <section className="relative bg-white py-28 border-b border-border">
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
 
             {/* Left column ─────────────────────────────────────── */}
             <div className="lg:col-span-5">
-              {/*
-                NOTE: SectionHeading rendered DIRECTLY in a motion.div
-                (no clip-path Reveal — that was hiding the entire column).
-              */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -53,9 +49,9 @@ export default function Home() {
 
               <Reveal delay={0.2}>
                 <div className="mt-9 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-ink/15 px-4 py-2 text-xs font-mono uppercase tracking-wide text-white bg-ink">Est. 2013</span>
-                  <span className="rounded-full border border-ink/15 px-4 py-2 text-xs font-mono uppercase tracking-wide text-white bg-ink">Cambridge, MA</span>
-                  <span className="rounded-full border border-ink/15 px-4 py-2 text-xs font-mono uppercase tracking-wide text-white bg-ink">62 staff biostatisticians</span>
+                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">Est. 2013</span>
+                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">Cambridge, MA</span>
+                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">62 staff biostatisticians</span>
                 </div>
               </Reveal>
             </div>
@@ -63,9 +59,9 @@ export default function Home() {
             {/* Right column ─────────────────────────────────────── */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Reveal delay={0.1} variant="scale">
-                <div className="rounded-3xl border-2 border-teal border-ink bg-indigo-tint p-8 h-full">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-indigo mb-4">Mission</p>
-                  <p className="font-display text-xl leading-snug text-ink">
+                <div className="rounded-3xl border border-teal/30 bg-teal-tint/70 p-8 h-full shadow-sm">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal font-bold mb-4">Mission</p>
+                  <p className="font-display text-xl leading-snug text-primary font-bold">
                     Give every sponsor the statistical rigor of an in-house biometrics
                     department, without the overhead of building one.
                   </p>
@@ -73,9 +69,9 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={0.18} variant="scale">
-                <div className="rounded-3xl border-2 border-indigo bg-teal-tint p-8 h-full">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal-deep mb-4">Vision</p>
-                  <p className="font-display text-xl leading-snug text-ink">
+                <div className="rounded-3xl border border-green/30 bg-green-tint/70 p-8 h-full shadow-sm">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-green font-bold mb-4">Vision</p>
+                  <p className="font-display text-xl leading-snug text-primary font-bold">
                     A future where no trial's conclusions are questioned because of how,
                     rather than what, the data showed.
                   </p>
@@ -83,7 +79,7 @@ export default function Home() {
               </Reveal>
 
               <Reveal delay={0.26} className="sm:col-span-2">
-                <div className="rounded-3xl border border-ink/10 p-8">
+                <div className="rounded-3xl border border-border bg-paper p-8">
                   <p className="text-ink-soft leading-relaxed">
                     Today we support Phase I through Phase IV programs across oncology,
                     rare disease, cardiometabolic, immunology, and CNS indications — for
@@ -104,9 +100,12 @@ export default function Home() {
       <ServicesHorizontalScroll />
 
       {/* ══════════════════════════════════════════════════════════
-          WHY CHOOSE US — unchanged from original
+          WHY CHOOSE US — dark navy panel matching reference Image 3
           ═════════════════════════════════════════════════════════ */}
-      <section className="relative bg-blue-bg text-ink py-28 grain">
+      <section
+        className="relative py-28 grain text-white"
+        style={{ background: "linear-gradient(115deg, #123B6D, #1C5A8F)" }}
+      >
         <div className="container-page">
           <SectionHeading
             eyebrow="Why ExelBio"
@@ -121,6 +120,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* ══════════════════════════════════════════════════════════
           TESTIMONIALS — unchanged from original
