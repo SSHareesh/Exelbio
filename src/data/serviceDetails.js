@@ -61,37 +61,6 @@ export const serviceDetails = {
     ],
   },
 
-  "clinical-data-management": {
-    title: "Clinical Data Management",
-    eyebrow: "EDC · Query Resolution · Lock",
-    tagline: "Data that's clean because it was built that way, not cleaned up later.",
-    overview:
-      "We design the eCRF, edit checks, and data management plan around the analysis you actually need to run — so fewer queries get generated in the first place, and the ones that do get resolved fast. Our data managers work inside Medidata Rave, Veeva, and InForm, and we track query aging and site performance in real time so nothing sits unresolved near database lock.",
-    features: [
-      { title: "eCRF & edit check design", detail: "Forms and validation logic built around the SAP's data needs, not a generic template." },
-      { title: "Query management", detail: "Auto-generated and manual queries tracked to resolution with site-level aging reports." },
-      { title: "Coding (MedDRA/WHODrug)", detail: "Adverse event and concomitant medication coding reconciled against the safety database." },
-      { title: "Database lock", detail: "A structured lock checklist covering SAE reconciliation, coding sign-off, and outstanding query closure." },
-    ],
-    benefits: [
-      "Fewer post-lock data issues because edit checks catch them at entry",
-      "Real-time query aging dashboards your team can see, not just us",
-      "Coding reconciled against safety data before it becomes a lock blocker",
-      "A lock checklist built from the SAP backward, so nothing is missing at analysis time",
-    ],
-    workflow: [
-      { title: "Build", detail: "eCRF, edit checks, and DMP built jointly with your clinical operations team." },
-      { title: "Conduct", detail: "Ongoing query management and site data review throughout enrollment." },
-      { title: "Reconciliation", detail: "SAE, coding, and external data (labs, ePRO, IRT) reconciled against the clinical database." },
-      { title: "Lock", detail: "Formal lock package with sign-offs, ready to hand to the programming and biostatistics team same day." },
-    ],
-    faqs: [
-      { q: "Which EDC systems do you support?", a: "Medidata Rave, Veeva Vault CDMS, and Oracle InForm most often. We can also work within a sponsor-hosted system if access is provided." },
-      { q: "Can you manage external data reconciliation?", a: "Yes — central lab, ePRO, IRT/IWRS, and imaging vendor data are all reconciled against the EDC as part of standard lock prep." },
-      { q: "How fast can you get to database lock once enrollment closes?", a: "It depends on outstanding query volume at last-patient-out, but a well-managed study is often lock-ready within two to three weeks." },
-    ],
-  },
-
   "statistical-consulting": {
     title: "Statistical Consulting",
     eyebrow: "Advisory",
@@ -154,34 +123,4 @@ export const serviceDetails = {
     ],
   },
 
-  "medical-writing": {
-    title: "Medical Writing",
-    eyebrow: "Protocols · CSRs · Manuscripts",
-    tagline: "Written so the statistics are legible to the people deciding on them.",
-    overview:
-      "Our medical writers work directly from the statistical output — not a hand-off summary — so the numbers in the CSR match the numbers in the TLFs, and the interpretation reflects what the analysis actually showed. We write protocols, clinical study reports, investigator brochures, and manuscripts for peer-reviewed publication, always with a statistician reviewing the draft before it goes to sponsor.",
-    features: [
-      { title: "Protocol authoring", detail: "Full protocol development or targeted revision of the statistical and endpoint sections." },
-      { title: "Clinical study reports", detail: "ICH E3-structured CSRs written directly against the locked TLF package." },
-      { title: "Investigator brochures", detail: "Updated IBs that keep pace with emerging safety and efficacy data across the program." },
-      { title: "Manuscript & abstract support", detail: "Publication-ready manuscripts prepared with target-journal formatting and statistical accuracy checked line by line." },
-    ],
-    benefits: [
-      "Every statistical claim in a document is checked against the underlying output",
-      "A dedicated writer who follows your program, not a new writer for each document",
-      "ICH E3 structure applied consistently across a program's CSRs",
-      "Faster internal review cycles because numbers and narrative already agree",
-    ],
-    workflow: [
-      { title: "Outline & alignment", detail: "A document outline agreed with medical, regulatory, and biostatistics before drafting starts." },
-      { title: "Drafting", detail: "First draft written directly from locked outputs, with open questions flagged rather than guessed at." },
-      { title: "Statistical QC", detail: "A statistician checks every numeric claim in the draft against the TLF package." },
-      { title: "Finalization", detail: "Sponsor review cycles managed to a fixed schedule, with tracked changes and a clear resolution log." },
-    ],
-    faqs: [
-      { q: "Do your writers have a statistics background?", a: "Our medical writers work in tandem with a reviewing statistician on every document with quantitative content — we don't rely on writers interpreting output alone." },
-      { q: "Can you take over a document mid-draft from another vendor?", a: "Yes, though we'll do a short consistency check between the existing draft and the underlying data before continuing." },
-      { q: "Do you handle journal submission formatting?", a: "Yes, including reformatting for a secondary journal if the manuscript is declined or redirected." },
-    ],
-  },
 };

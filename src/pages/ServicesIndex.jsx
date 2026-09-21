@@ -11,17 +11,17 @@ export default function ServicesIndex() {
         <div className="container-page">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-              <span className="inline-block h-px w-6 bg-teal" /> Services
+              Services
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
-              Six disciplines. One accountable team.
+            <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
+              Four disciplines. One accountable team.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
-              Engage one service or all six — every engagement is staffed by the same
+            <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ink-soft">
+              Engage one service or all four — every engagement is staffed by the same
               people from consultation through submission.
             </p>
           </Reveal>
@@ -35,7 +35,7 @@ export default function ServicesIndex() {
             eyebrow="Full catalog"
             title="Find the service your study needs right now"
           />
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-7 items-stretch">
             {services.map((s, i) => (
               <ServiceCard key={s.slug} service={s} index={i} />
             ))}

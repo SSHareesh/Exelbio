@@ -27,7 +27,7 @@ export default function StrengthCard({ item, index, dark = false }) {
           )} />
         </span>
         <h3 className={cn(
-          "mt-5 font-display text-lg tracking-tight",
+          "mt-5 font-display text-lg sm:text-xl tracking-tight leading-snug",
           dark ? "text-white font-semibold" : "text-primary font-bold"
         )}>
           {item.title}

@@ -33,10 +33,10 @@ function IntroCard() {
     >
       <div>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-panel-accent flex items-center gap-2 font-bold">
-          <span className="inline-block h-px w-6 bg-panel-accent" /> What we do
+          What we do
         </p>
-        <h3 className="mt-6 font-display text-[2.6rem] sm:text-5xl leading-[1.06] tracking-tight font-bold">
-          Six&nbsp;disciplines.<br />One&nbsp;team.
+        <h3 className="mt-6 font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.2] tracking-tight font-bold">
+          Four&nbsp;disciplines.<br />One&nbsp;team.
         </h3>
         <p className="mt-6 text-panel-muted leading-relaxed max-w-xs text-[0.95rem]">
           Each service runs independently or as one accountable engagement — staffed by
@@ -74,19 +74,15 @@ function IntroCard() {
 const highlights = {
   "biostatistics": ["SAP authorship", "Sample size & power", "Adaptive design simulation"],
   "statistical-programming": ["SDTM / ADaM datasets", "Double-programming QC", "SAS & R capable"],
-  "clinical-data-management": ["eCRF & edit-check design", "Real-time query aging", "Database lock prep"],
   "statistical-consulting": ["FDA meeting prep", "Estimand strategy", "Independent SAP review"],
   "regulatory-submission-support": ["ISS / ISE construction", "eCTD Module 5 packaging", "IR fast turnaround"],
-  "medical-writing": ["Protocol authoring", "ICH E3 CSRs", "Manuscript & abstract support"],
 };
 
 const serviceImages = {
   "biostatistics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
   "statistical-programming": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-  "clinical-data-management": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80",
   "statistical-consulting": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
   "regulatory-submission-support": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
-  "medical-writing": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80",
 };
 
 function ImageCard({ service, tone, className = "" }) {
@@ -149,7 +145,7 @@ function InfoCard({ service, index, tone, className = "" }) {
           </span>
         </div>
 
-        <h3 className="mt-3 font-display text-[1.1rem] sm:text-[1.2rem] leading-snug tracking-tight text-primary font-bold">
+        <h3 className="mt-3 font-display text-lg sm:text-xl leading-snug tracking-tight text-primary font-bold">
           {service.title}
         </h3>
         <p className="mt-1.5 text-[0.82rem] leading-relaxed text-ink-soft">
@@ -270,7 +266,7 @@ export default function ServicesHorizontalScroll() {
         <div className="sticky top-0 h-screen flex flex-col justify-center pt-12 pr-16 overflow-hidden bg-paper-dim/40">
           <div className="container-page mb-8">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2">
-              <span className="inline-block h-px w-6 bg-teal" /> Scroll to explore
+              Scroll to explore
             </p>
           </div>
           <motion.div
@@ -300,9 +296,9 @@ export default function ServicesHorizontalScroll() {
       <section className="relative bg-paper py-20 lg:hidden border-b border-border">
         <div className="container-page mb-8">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-            <span className="inline-block h-px w-6 bg-teal" /> What we do
+            What we do
           </p>
-          <h2 className="mt-4 font-display text-3xl leading-[1.1] tracking-tight text-primary font-bold">
+          <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-primary font-bold">
             Services
           </h2>
         </div>

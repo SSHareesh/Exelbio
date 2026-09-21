@@ -94,7 +94,7 @@ export default function LoadingScreen() {
             {/* Official Logo */}
             <motion.img
               src="/logo-transparent.png"
-              alt="ExelBio"
+              alt="Exelbio"
               className="h-14 sm:h-16 md:h-20 w-auto object-contain"
               initial={{ scale: 0.75, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

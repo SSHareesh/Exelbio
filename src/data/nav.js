@@ -12,12 +12,6 @@ export const services = [
     icon: "Terminal",
   },
   {
-    slug: "clinical-data-management",
-    title: "Clinical Data Management",
-    short: "Clean, query-free data from first patient in to lock.",
-    icon: "Database",
-  },
-  {
     slug: "statistical-consulting",
     title: "Statistical Consulting",
     short: "An experienced statistician in the room for every decision.",
@@ -28,12 +22,6 @@ export const services = [
     title: "Regulatory Submission Support",
     short: "eCTD-ready packages built for FDA, EMA, and PMDA review.",
     icon: "FileCheck2",
-  },
-  {
-    slug: "medical-writing",
-    title: "Medical Writing",
-    short: "Protocols, CSRs, and manuscripts written for the reader.",
-    icon: "PenLine",
   },
 ];
 

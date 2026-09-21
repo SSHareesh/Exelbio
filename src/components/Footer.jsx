@@ -27,7 +27,7 @@ export default function Footer() {
             <Link to="/" className="inline-block bg-white px-3.5 py-2 rounded-xl shadow-sm hover:opacity-95 transition-opacity">
               <img
                 src="/logo.png"
-                alt="ExelBio — Insight | Innovation | Impact"
+                alt="Exelbio — Insight | Innovation | Impact"
                 className="h-7 sm:h-8 w-auto object-contain"
                 width="140"
                 height="32"
@@ -46,7 +46,7 @@ export default function Footer() {
               <a href="#" aria-label="X (formerly Twitter)" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
                 <XGlyph />
               </a>
-              <a href="mailto:hello@ExelBiobiostat.example" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
+              <a href="mailto:contact@exel-bio.com" aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-footer-muted hover:border-teal hover:text-teal hover:bg-white/5 transition-colors">
                 <Mail size={16} />
               </a>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="md:col-span-3">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80 font-bold mb-4">Services</p>
             <ul className="space-y-2.5 text-sm">
-              {services.slice(0, 5).map((s) => (
+              {services.map((s) => (
                 <li key={s.slug}>
                   <Link to={`/services/${s.slug}`} className="text-footer-muted hover:text-teal transition-colors">
                     {s.title}
@@ -88,14 +88,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="shrink-0 text-teal" />
-                <span className="text-footer-muted">hello@ExelBiobiostat.example</span>
+                <span className="text-footer-muted">contact@exel-bio.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-footer-muted/60">
-          <p>© {new Date().getFullYear()} ExelBio Biostatistics, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Exelbio Biostatistics, Inc. All rights reserved.</p>
           <p className="font-mono">n = trials analyzed with care, not just volume.</p>
         </div>
       </div>

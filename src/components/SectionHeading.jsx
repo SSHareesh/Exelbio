@@ -26,7 +26,6 @@ export default function SectionHeading({
               light ? "text-panel-accent" : "text-teal"
             )}
           >
-            <span className={cn("inline-block h-px w-6", light ? "bg-panel-accent" : "bg-teal")} />
             {eyebrow}
           </p>
         </Reveal>
@@ -34,8 +33,8 @@ export default function SectionHeading({
       <Reveal delay={0.08}>
         <h2
           className={cn(
-            "font-display text-3xl md:text-4xl lg:text-[2.75rem] leading-[1.1] tracking-tight",
-            light ? "text-white" : "text-primary font-bold"
+            "font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.2]",
+            light ? "text-white" : "text-primary"
           )}
         >
           {title}
@@ -43,7 +42,7 @@ export default function SectionHeading({
       </Reveal>
       {description && (
         <Reveal delay={0.14}>
-          <p className={cn("mt-4 text-[1.05rem] leading-relaxed", light ? "text-panel-muted" : "text-ink-soft")}>
+          <p className={cn("mt-4 text-base sm:text-lg leading-relaxed", light ? "text-panel-muted" : "text-ink-soft")}>
             {description}
           </p>
         </Reveal>

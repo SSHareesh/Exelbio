@@ -65,7 +65,7 @@ export default function Testimonials({ items }) {
                       className="text-teal mb-6"
                       strokeWidth={1.5}
                     />
-                    <blockquote className="font-display text-lg md:text-xl xl:text-2xl leading-relaxed">
+                    <blockquote className="font-display text-base sm:text-lg lg:text-xl leading-relaxed">
                       "{t.quote}"
                     </blockquote>
                   </div>
@@ -160,7 +160,7 @@ export default function Testimonials({ items }) {
                   className="text-teal mb-4"
                   strokeWidth={1.5}
                 />
-                <blockquote className="font-display text-base leading-relaxed">
+                <blockquote className="font-display text-base sm:text-lg leading-relaxed">
                   "{items[activeIndex].quote}"
                 </blockquote>
               </div>

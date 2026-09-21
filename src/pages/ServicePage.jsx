@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
-import { Plus, Minus, Check, LineChart, Terminal, Database, Users, FileCheck2, PenLine } from "lucide-react";
+import { useParams, Link } from "react-router-dom";
+import { Plus, Minus, Check, LineChart, Terminal, Users, FileCheck2 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import WorkflowSteps from "../components/WorkflowSteps";
 import ContactCTA from "../components/ContactCTA";
 import ScatterField from "../components/ScatterField";
+import NotFound from "./NotFound";
 import { services } from "../data/nav";
 import { serviceDetails } from "../data/serviceDetails";
 
-const iconMap = { LineChart, Terminal, Database, Users, FileCheck2, PenLine };
+const iconMap = { LineChart, Terminal, Users, FileCheck2 };
 
 function FaqItem({ item, index }) {
   const [open, setOpen] = useState(index === 0);
@@ -20,7 +21,7 @@ function FaqItem({ item, index }) {
           onClick={() => setOpen((v) => !v)}
           className="flex w-full items-center justify-between gap-6 text-left focus-ring"
         >
-          <span className="font-display text-lg text-ink">{item.q}</span>
+          <span className="font-display text-base sm:text-lg text-ink font-semibold">{item.q}</span>
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink/15 text-ink">
             {open ? <Minus size={14} /> : <Plus size={14} />}
           </span>
@@ -39,7 +40,7 @@ export default function ServicePage() {
   const detail = serviceDetails[slug];
 
   if (!meta || !detail) {
-    return <Navigate to="/services" replace />;
+    return <NotFound />;
   }
 
   const Icon = iconMap[meta.icon];
@@ -61,12 +62,12 @@ export default function ServicePage() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.08] tracking-tight text-primary font-bold">
+            <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
               {detail.title}
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 max-w-xl text-lg text-ink-soft leading-relaxed">{detail.tagline}</p>
+            <p className="mt-5 max-w-xl text-base sm:text-lg text-ink-soft leading-relaxed">{detail.tagline}</p>
           </Reveal>
         </div>
       </section>
@@ -93,7 +94,7 @@ export default function ServicePage() {
             {detail.features.map((f, i) => (
               <Reveal key={f.title} delay={i * 0.07}>
                 <div className="rounded-2xl bg-surface border border-border p-6 h-full shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
-                  <h3 className="font-display text-lg text-primary font-bold">{f.title}</h3>
+                  <h3 className="font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{f.title}</h3>
                   <p className="mt-2 text-sm text-ink-soft leading-relaxed">{f.detail}</p>
                 </div>
               </Reveal>
@@ -168,7 +169,7 @@ export default function ServicePage() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-tint text-teal group-hover:bg-teal group-hover:text-white transition-colors duration-300">
                     <OIcon size={16} />
                   </span>
-                  <h3 className="mt-4 font-display text-base text-primary font-bold">{s.title}</h3>
+                  <h3 className="mt-4 font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{s.title}</h3>
                   <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{s.short}</p>
                 </Link>
               );

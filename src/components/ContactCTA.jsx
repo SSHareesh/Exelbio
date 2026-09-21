@@ -19,20 +19,20 @@ export default function ContactCTA({
         <div className="max-w-xl">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-panel-accent mb-4 flex items-center gap-2 font-bold">
-              <span className="inline-block h-px w-6 bg-panel-accent" /> {eyebrow}
+              {eyebrow}
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="font-display text-3xl md:text-[2.6rem] leading-[1.1] tracking-tight text-white font-bold">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.2] text-white">
               {title}
             </h2>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-5 text-panel-muted text-[1.05rem] leading-relaxed">{description}</p>
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-panel-muted">{description}</p>
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button to="/contact" variant="primary">Talk to a statistician</Button>
+              <Button to="/contact" variant="primary">Talk to us</Button>
               <Button to="/services" variant="outline-light" icon={false}>Browse services</Button>
             </div>
           </Reveal>

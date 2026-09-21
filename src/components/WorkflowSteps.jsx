@@ -26,7 +26,7 @@ export default function WorkflowSteps({ steps, dark = false }) {
               </div>
               <h3
                 className={cn(
-                  "mt-4 font-display text-lg tracking-tight",
+                  "mt-4 font-display text-lg sm:text-xl tracking-tight leading-snug",
                   dark ? "text-white font-semibold" : "text-primary font-bold"
                 )}
               >

@@ -194,7 +194,7 @@ export default function ServiceCard({ service, index }) {
               </span>
               <span className="font-mono text-xs text-ink-soft/60">0{index + 1}</span>
             </div>
-            <h3 className="mt-4 font-display text-xl text-primary font-bold tracking-tight">{service.title}</h3>
+            <h3 className="mt-4 font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{service.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-ink-soft">{service.short}</p>
           </div>
           <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-teal">

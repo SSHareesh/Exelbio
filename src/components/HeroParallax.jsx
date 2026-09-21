@@ -9,11 +9,9 @@ import {
 import { ChevronDown } from "lucide-react";
 import Button from "./Button";
 import ScatterField from "./ScatterField";
-import StatStrip from "./StatStrip";
 import MorphingBlob from "./MorphingBlob";
 import FloatingParticles from "./FloatingParticles";
 import GeometricAccents from "./GeometricAccents";
-import { stats } from "../data/home";
 
 /* ─────────────────────────────────────────────────────────────────────
  * HeroParallax
@@ -45,17 +43,8 @@ export default function HeroParallax() {
   const particleY = useTransform(scrollYProgress, [0, 1], ["0%", "35%"]);
   const scatterY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
 
-  /* Content layers — subtle lag = slight depth */
-  const headingY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const descY = useTransform(scrollYProgress, [0, 1], ["0%", "7%"]);
-  const buttonsY = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
-
-  /* Fade-outs on exit */
+  /* Background opacity fades as hero exits — decoration only */
   const bgOpacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.2]);
-  const contentOpacity = useTransform(scrollYProgress, [0.55, 0.85], [1, 0]);
-
-  /* Heading subtle scale on scroll */
-  const headingScale = useTransform(scrollYProgress, [0, 0.8], [1, 0.96]);
 
   /* ── Mouse-based parallax ──────────────────────────────── */
   const rawMouseX = useMotionValue(0);
@@ -187,73 +176,141 @@ export default function HeroParallax() {
       {/* ══════════════════════════════════════════════════════════
           CONTENT  (Layers 4 – 6  +  StatStrip)
           ═════════════════════════════════════════════════════════ */}
-      <div className="container-page relative pt-32 pb-24">
+      <div className="w-full container-page relative pt-32 pb-24">
+        {/* Two-column layout: text left, logo card right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-        {/* Eyebrow — entrance only */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-mono text-xs uppercase tracking-[0.25em] text-teal font-extrabold flex items-center gap-2"
-        >
-          <span className="inline-block h-px w-8 bg-teal" />
-          Biometrics • Data • Insight
-        </motion.p>
+          {/* ── LEFT COLUMN: Text content ──────────────────────── */}
+          <div className="flex flex-col">
 
-        {/* ── LAYER 4: Heading ───────────────────────────────────── */}
-        <motion.div
-          style={{ y: headingY, scale: headingScale, opacity: contentOpacity }}
-          className="origin-top-left"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 max-w-3xl font-display text-[2.6rem] leading-[1.06] tracking-tight sm:text-6xl lg:text-[4.6rem] text-primary"
-          >
-            Turning clinical data into<br className="hidden sm:block" />{" "}
-            <span className="text-teal">meaningful insight.</span>
-          </motion.h1>
-        </motion.div>
+            {/* Eyebrow — entrance animation only */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-mono text-xs uppercase tracking-[0.25em] text-teal font-extrabold flex items-center gap-2"
+            >
+              Biometrics • Data • Insight
+            </motion.p>
 
-        {/* ── LAYER 5: Description ───────────────────────────────── */}
-        <motion.div style={{ y: descY, opacity: contentOpacity }}>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.32 }}
-            className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft"
-          >
-            ExelBio delivers high-quality biometrics and clinical data solutions that help
-            life-science teams make confident decisions and move programmes forward.
-            The same statistician who writes your SAP defends it at regulatory review.
-          </motion.p>
-        </motion.div>
+            {/* Heading — entrance animation only */}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary"
+            >
+              Turning clinical data into<br className="hidden sm:block" />{" "}
+              <span className="text-teal">meaningful insight.</span>
+            </motion.h1>
 
-        {/* ── LAYER 6: CTA Buttons ───────────────────────────────── */}
-        <motion.div style={{ y: buttonsY, opacity: contentOpacity }}>
+            {/* Description — entrance animation only */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.32 }}
+              className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ink-soft"
+            >
+              Exelbio delivers high-quality biometrics and clinical data solutions that help
+              life-science teams make confident decisions and move programmes forward.
+              The same statistician who writes your SAP defends it at regulatory review.
+            </motion.p>
+
+            {/* CTA Buttons — entrance animation only */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.44 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <Button to="/contact" variant="primary">Explore our services</Button>
+              <Button to="/about" variant="outline" icon={false}>
+                Discover Exelbio
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* ── RIGHT COLUMN: Logo card — desktop only ─────────── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.44 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
+            initial={{ opacity: 0, x: 40, scale: 0.96 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1.0, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:flex items-center justify-center"
+            aria-hidden="true"
           >
-            <Button to="/contact" variant="primary">Explore our services</Button>
-            <Button to="/about" variant="outline" icon={false}>
-              Discover ExelBio
-            </Button>
-          </motion.div>
-        </motion.div>
+            {/* White card */}
+            <div
+              className="relative w-full max-w-[420px] aspect-[4/3] rounded-3xl flex items-center justify-center overflow-hidden"
+              style={{
+                background: "linear-gradient(145deg, #ffffff 0%, #f0f8f8 100%)",
+                boxShadow:
+                  "0 24px 64px -16px rgba(18,59,109,0.14), 0 4px 16px -4px rgba(18,167,165,0.10), inset 0 1px 0 rgba(255,255,255,0.9)",
+                border: "1px solid rgba(220,231,237,0.80)",
+              }}
+            >
+              {/* Decorative orbital ellipses — matching the reference image */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 420 315"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                {/* Outer large ellipse */}
+                <ellipse
+                  cx="210"
+                  cy="157"
+                  rx="190"
+                  ry="130"
+                  stroke="#12a7a5"
+                  strokeWidth="1"
+                  strokeOpacity="0.18"
+                  fill="none"
+                  transform="rotate(-18, 210, 157)"
+                />
+                {/* Mid ellipse */}
+                <ellipse
+                  cx="210"
+                  cy="157"
+                  rx="148"
+                  ry="100"
+                  stroke="#12a7a5"
+                  strokeWidth="0.8"
+                  strokeOpacity="0.13"
+                  fill="none"
+                  transform="rotate(-18, 210, 157)"
+                />
+                {/* Inner ellipse */}
+                <ellipse
+                  cx="210"
+                  cy="157"
+                  rx="108"
+                  ry="72"
+                  stroke="#12a7a5"
+                  strokeWidth="0.6"
+                  strokeOpacity="0.10"
+                  fill="none"
+                  transform="rotate(-18, 210, 157)"
+                />
+                {/* Accent dot on outer orbit */}
+                <circle cx="50" cy="110" r="4" fill="#12a7a5" fillOpacity="0.25" />
+                <circle cx="370" cy="205" r="3" fill="#12a7a5" fillOpacity="0.18" />
+                <circle cx="390" cy="90" r="2" fill="#20b765" fillOpacity="0.20" />
+              </svg>
 
-        {/* StatStrip — no extra parallax */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-24"
-        >
-          <StatStrip stats={stats.map((s) => ({ ...s }))} />
-        </motion.div>
+              {/* Logo */}
+              <div className="relative z-10 flex items-center justify-center px-10">
+                <img
+                  src="/logo-transparent.png"
+                  alt="Exelbio"
+                  className="w-full max-w-[240px] h-auto object-contain drop-shadow-sm"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
 
       {/* Scroll caret */}
@@ -261,7 +318,6 @@ export default function HeroParallax() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary/30"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        style={{ opacity: contentOpacity }}
       >
         <ChevronDown size={20} />
       </motion.div>

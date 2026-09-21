@@ -85,7 +85,7 @@ function ManuscriptArt({ p }) {
       <path d="M40 160 L120 60 L160 90 L260 20" fill="none" stroke={p.a} strokeWidth="4" strokeLinecap="round" />
       <circle cx="260" cy="20" r="7" fill={p.a} />
       {[0, 1, 2, 3].map((row) => (
-        <line key={row} x1="40" y1={130 - row * 0} x2="40" y2="40" stroke="transparent" />
+        <line key={row} x1="40" y1={130} x2="40" y2="40" stroke="transparent" />
       ))}
     </>
   );

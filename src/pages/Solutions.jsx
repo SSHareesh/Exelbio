@@ -26,16 +26,16 @@ export default function Solutions() {
         <div className="container-page">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-              <span className="inline-block h-px w-6 bg-teal" /> Solutions
+              Solutions
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
+            <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
               Built around your phase and indication, not a one-size template.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ink-soft">
               A Phase I dose-escalation study and a Phase III cardiovascular outcomes
               trial need different statistical instincts. We staff accordingly.
             </p>
@@ -70,7 +70,7 @@ export default function Solutions() {
                     <item.icon size={18} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-primary font-bold">{item.name}</h3>
+                    <h3 className="font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{item.name}</h3>
                     <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{item.detail}</p>
                   </div>
                 </div>

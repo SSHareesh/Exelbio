@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, Menu, X, LineChart, Terminal, Database, Users, FileCheck2, PenLine } from "lucide-react";
+import { ChevronDown, Menu, X, LineChart, Terminal, Users, FileCheck2 } from "lucide-react";
 import { primaryNav, services, resourceLinks } from "../data/nav";
 import { cn } from "../utils/cn";
 import Button from "./Button";
 
-const iconMap = { LineChart, Terminal, Database, Users, FileCheck2, PenLine };
+const iconMap = { LineChart, Terminal, Users, FileCheck2 };
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,35 +30,34 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "py-3" : "py-6"
+        scrolled ? "py-0" : "py-0"
       )}
     >
-      <div className="container-page">
-        <div
-          className={cn(
-            "flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500",
-            scrolled
-              ? "shadow-[0_8px_30px_-12px_rgba(16,28,44,0.18)]"
-              : ""
-          )}
-          style={{
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            background: scrolled
-              ? "linear-gradient(135deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.60) 100%)"
-              : "linear-gradient(135deg, rgba(255,255,255,0.30) 0%, rgba(255,255,255,0.15) 100%)",
-            border: scrolled
-              ? "1px solid rgba(255,255,255,0.65)"
-              : "1px solid rgba(255,255,255,0.35)",
-          }}
-        >
+      <div
+        className={cn(
+          "w-full flex items-center justify-between px-4 sm:px-6 lg:px-10 py-4 transition-all duration-500",
+          scrolled
+            ? "shadow-[0_4px_24px_-8px_rgba(16,28,44,0.16)]"
+            : ""
+        )}
+        style={{
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          background: scrolled
+            ? "linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.78) 100%)"
+            : "linear-gradient(135deg, rgba(255,255,255,0.40) 0%, rgba(255,255,255,0.22) 100%)",
+          borderBottom: scrolled
+            ? "1px solid rgba(255,255,255,0.65)"
+            : "1px solid rgba(255,255,255,0.22)",
+        }}
+      >
           <Link to="/" className="flex items-center shrink-0 focus-ring rounded-lg py-1">
             <img
               src="/logo-transparent.png"
-              alt="ExelBio — Insight | Innovation | Impact"
-              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
-              width="160"
-              height="40"
+              alt="Exelbio — Insight | Innovation | Impact"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 hover:scale-[1.02]"
+              width="200"
+              height="56"
             />
           </Link>
 
@@ -102,7 +101,7 @@ export default function Navbar() {
                       transition={{ duration: 0.18, ease: "easeOut" }}
                       className={cn(
                         "absolute top-full pt-3 left-1/2 -translate-x-1/2",
-                        item.label === "Services" ? "w-[560px]" : "w-[380px]"
+                        item.label === "Services" ? "w-[420px]" : "w-[380px]"
                       )}
                     >
                       <div
@@ -170,7 +169,6 @@ export default function Navbar() {
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
-        </div>
       </div>
 
       <AnimatePresence>
@@ -182,7 +180,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="container-page pt-3 pb-6">
+            <div className="w-full px-4 sm:px-6 md:px-8 pt-3 pb-6">
               <div
                 className="rounded-3xl shadow-xl p-5"
                 style={{

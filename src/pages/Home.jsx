@@ -43,7 +43,7 @@ export default function Home() {
                 <SectionHeading
                   eyebrow="Who we are"
                   title="A CRO built by statisticians, still run by statisticians."
-                  description="ExelBio was founded in 2013 by three biostatisticians who kept seeing the same problem elsewhere: the person who designed a trial's analysis was rarely the person defending it in front of a review team. We built the company around fixing that."
+                  description="Exelbio was founded in 2013 by three biostatisticians who kept seeing the same problem elsewhere: the person who designed a trial's analysis was rarely the person defending it in front of a review team. We built the company around fixing that."
                 />
               </motion.div>
 
@@ -61,7 +61,7 @@ export default function Home() {
               <Reveal delay={0.1} variant="scale">
                 <div className="rounded-3xl border border-teal/30 bg-teal-tint/70 p-8 h-full shadow-sm">
                   <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal font-bold mb-4">Mission</p>
-                  <p className="font-display text-xl leading-snug text-primary font-bold">
+                  <p className="font-display text-lg sm:text-xl leading-snug text-primary font-bold">
                     Give every sponsor the statistical rigor of an in-house biometrics
                     department, without the overhead of building one.
                   </p>
@@ -71,7 +71,7 @@ export default function Home() {
               <Reveal delay={0.18} variant="scale">
                 <div className="rounded-3xl border border-green/30 bg-green-tint/70 p-8 h-full shadow-sm">
                   <p className="font-mono text-xs uppercase tracking-[0.18em] text-green font-bold mb-4">Vision</p>
-                  <p className="font-display text-xl leading-snug text-primary font-bold">
+                  <p className="font-display text-lg sm:text-xl leading-snug text-primary font-bold">
                     A future where no trial's conclusions are questioned because of how,
                     rather than what, the data showed.
                   </p>
@@ -108,7 +108,7 @@ export default function Home() {
       >
         <div className="container-page">
           <SectionHeading
-            eyebrow="Why ExelBio"
+            eyebrow="Why Exelbio"
             title="What sponsors notice after the first study."
             description="Not a list of certifications — the operational habits that actually change how a trial goes."
             light={true}

@@ -49,11 +49,11 @@ export default function Resources() {
         <div className="container-page">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-              <span className="inline-block h-px w-6 bg-teal" /> Resources
+              Resources
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.2rem] leading-[1.08] tracking-tight text-primary font-bold">
+            <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
               Notes from the desk, not the marketing team.
             </h1>
           </Reveal>
@@ -68,7 +68,7 @@ export default function Resources() {
               <Reveal key={c.title} delay={i * 0.08}>
                 <div className="h-full rounded-2xl border border-border bg-paper p-7 flex flex-col shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
                   <span className="font-mono text-xs uppercase tracking-wide text-teal font-bold">{c.tag}</span>
-                  <h3 className="mt-3 font-display text-lg text-primary font-bold leading-snug">{c.title}</h3>
+                  <h3 className="mt-3 font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{c.title}</h3>
                   <p className="mt-3 text-sm text-ink-soft leading-relaxed">{c.detail}</p>
                 </div>
               </Reveal>
@@ -86,7 +86,7 @@ export default function Resources() {
                 <a href="#" className="flex items-center justify-between gap-6 py-6 group">
                   <span className="flex items-center gap-4">
                     <ScrollText size={18} className="text-teal shrink-0" />
-                    <span className="font-display text-lg text-primary font-bold group-hover:text-teal transition-colors">{n.title}</span>
+                    <span className="font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug group-hover:text-teal transition-colors">{n.title}</span>
                   </span>
                   <span className="font-mono text-xs text-ink-soft uppercase tracking-wide shrink-0">{n.tag}</span>
                 </a>
@@ -121,7 +121,7 @@ export default function Resources() {
                 <div className="rounded-2xl bg-surface border border-border p-6 flex flex-col items-start gap-4 shadow-xs hover:border-teal/30 hover:shadow-md transition-all">
                   <PlayCircle size={28} className="text-teal" strokeWidth={1.5} />
                   <div>
-                    <h3 className="font-display text-base text-primary font-bold leading-snug">{w.title}</h3>
+                    <h3 className="font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{w.title}</h3>
                     <p className="mt-1 font-mono text-xs text-ink-soft">{w.length}</p>
                   </div>
                 </div>

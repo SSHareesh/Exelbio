@@ -2,8 +2,6 @@ import { Award, Users2, Building2, Microscope } from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import ContactCTA from "../components/ContactCTA";
-import StatStrip from "../components/StatStrip";
-import { stats } from "../data/home";
 
 const timeline = [
   { year: "2013", event: "Founded in Cambridge by three biostatisticians from academic and CRO backgrounds." },
@@ -27,16 +25,16 @@ export default function About() {
         <div className="container-page relative">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-              <span className="inline-block h-px w-6 bg-teal" /> About ExelBio
+              About Exelbio
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl font-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight text-primary font-bold">
+            <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
               Twelve years of one idea, applied consistently.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-ink-soft text-lg leading-relaxed">
+            <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ink-soft">
               The statistician who designs your trial's analysis should be the one
               standing behind it — at the DSMB table, in an FDA meeting, and in the
               footnotes of the CSR.
@@ -45,11 +43,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-white py-20 border-b border-border">
-        <div className="container-page">
-          <StatStrip stats={stats} />
-        </div>
-      </section>
+
 
       <section className="bg-paper py-28 border-b border-border">
         <div className="container-page">
@@ -90,7 +84,7 @@ export default function About() {
                     <v.icon size={18} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-primary font-bold tracking-tight">{v.title}</h3>
+                    <h3 className="font-display text-lg sm:text-xl text-primary font-bold tracking-tight leading-snug">{v.title}</h3>
                     <p className="mt-1.5 text-sm text-ink-soft leading-relaxed">{v.detail}</p>
                   </div>
                 </div>
