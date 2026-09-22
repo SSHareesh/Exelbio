@@ -157,7 +157,7 @@ export default function Contact() {
       console.error("EmailJS sending error:", err);
       setSubmitError(
         err?.message ||
-          "Unable to send your message right now. Please try again or email us directly at hello@Exelbiobiostat.example."
+          "Unable to send your message right now. Please try again or email us directly at contact@exel-bio.com."
       );
     } finally {
       setIsSubmitting(false);
@@ -226,7 +226,9 @@ export default function Contact() {
                     </li>
                     <li className="flex items-center gap-3.5">
                       <Mail size={18} className="text-teal shrink-0" />
-                      <span className="text-ink-soft">hello@Exelbiobiostat.example</span>
+                      <a href="mailto:contact@exel-bio.com" className="text-ink-soft hover:text-teal transition-colors">
+                        contact@exel-bio.com
+                      </a>
                     </li>
                   </ul>
                   <div className="mt-10 pt-8 border-t border-border">
@@ -244,7 +246,7 @@ export default function Contact() {
                       Prefer a direct conversation? Book a free 30-minute call with one of our senior biostatisticians — no commitment, just clarity on what your study needs.
                     </p>
                     <a
-                      href="mailto:hello@Exelbiobiostat.example?subject=Expert%20Consultation%20Request"
+                      href="mailto:contact@exel-bio.com?subject=Expert%20Consultation%20Request"
                       className="mt-4 inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-xs font-bold text-white hover:bg-teal-hover transition-colors shadow-sm"
                     >
                       Book a free call
@@ -303,12 +305,12 @@ export default function Contact() {
                             <p className="text-xs text-rose-600 mt-2">
                               You can also email us directly at{" "}
                               <a
-                                href={`mailto:contact@exelbio.com?subject=Inquiry%20from%20${encodeURIComponent(
+                                href={`mailto:contact@exel-bio.com?subject=Inquiry%20from%20${encodeURIComponent(
                                   formData.company || formData.firstName || "Sponsor"
                                 )}`}
                                 className="underline font-semibold hover:text-rose-900"
                               >
-                                contact@exelbio.com
+                                contact@exel-bio.com
                               </a>
                             </p>
                           </div>
