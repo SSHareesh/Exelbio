@@ -3,83 +3,84 @@ import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import ContactCTA from "../components/ContactCTA";
 
-const timeline = [
-  { year: "2013", event: "Founded in Cambridge by three biostatisticians from academic and CRO backgrounds." },
-  { year: "2016", event: "First full-service oncology program, from protocol design through NDA submission." },
-  { year: "2019", event: "Built an in-house CDISC programming team to keep SDTM/ADaM work under one roof." },
-  { year: "2022", event: "Opened a data management group to close the loop from eCRF design to lock." },
-  { year: "2025", event: "62 staff biostatisticians supporting sponsors across four continents." },
-];
-
 const values = [
   { icon: Users2, title: "Named accountability", detail: "One statistician owns your study. If something's wrong, you know exactly who to call." },
   { icon: Award, title: "Rigor over speed", detail: "We'll tell you when a timeline is unrealistic for the analysis you're asking for." },
-  { icon: Microscope, title: "Evidence, plainly stated", detail: "Our reports say what the data shows, not what a sponsor might want to hear." },
+  { icon: Microscope, detail: "Our reports say what the data shows, not what a sponsor might want to hear.", title: "Evidence, plainly stated" },
   { icon: Building2, title: "Built to be audited", detail: "Every deliverable is documented as if an inspector will read it, because eventually one might." },
 ];
 
 export default function About() {
   return (
     <>
-      <section className="relative hero-radial-bg text-ink pt-40 pb-24 grain overflow-hidden border-b border-border">
+      <section className="relative hero-radial-bg text-ink pt-32 sm:pt-40 pb-20 sm:pb-24 grain overflow-hidden border-b border-border">
         <div className="container-page relative">
           <Reveal>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-              About Exelbio
+              About Us
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-6 max-w-2xl font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-primary">
-              Twelve years of one idea, applied consistently.
+              Expert statisticians and programmers, across every phase of drug development.
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ink-soft">
-              The statistician who designs your trial's analysis should be the one
-              standing behind it — at the DSMB table, in an FDA meeting, and in the
-              footnotes of the CSR.
+              Our team has detailed knowledge of all clinical trial Phases and experience across a multitude of therapeutic areas — forming long-lasting partnerships that span the entire drug development spectrum.
             </p>
           </Reveal>
         </div>
       </section>
 
-
-
-      <section className="bg-paper py-28 border-b border-border">
+      {/* Our Approach section */}
+      <section className="bg-white py-16 sm:py-24 border-b border-border">
         <div className="container-page">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-4">
               <SectionHeading
-                eyebrow="Timeline"
-                title="How we got here"
-                description="A short history, kept honest — no year skipped for the sake of the narrative."
+                eyebrow="Our Approach"
+                title="Partnership models designed around your objectives."
               />
             </div>
             <div className="lg:col-span-8">
-              <div className="relative pl-8 border-l border-border">
-                {timeline.map((t, i) => (
-                  <Reveal key={t.year} delay={i * 0.08} className="relative pb-10 last:pb-0">
-                    <span className="absolute -left-[calc(2rem+4px)] top-1 h-2.5 w-2.5 rounded-full bg-teal" />
-                    <p className="font-mono text-sm text-teal font-bold">{t.year}</p>
-                    <p className="mt-1.5 text-ink-soft leading-relaxed max-w-xl">{t.event}</p>
-                  </Reveal>
-                ))}
-              </div>
+              <Reveal delay={0.12}>
+                <p className="text-base sm:text-lg text-ink-soft leading-relaxed">
+                  Our approach for each project is customized using one of our partnership models and is designed to meet the specific objectives of our clients. Whether you need full-service support from protocol design through submission, or targeted expertise for a single study component, we build the engagement around what you actually need.
+                </p>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  <div className="rounded-2xl border border-teal/25 bg-teal-tint/50 p-5">
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal font-bold mb-2">Full Service</p>
+                    <p className="text-sm text-ink-soft leading-relaxed">End-to-end statistical and programming support from protocol design to NDA submission.</p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-paper p-5">
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-primary font-bold mb-2">Collaborative</p>
+                    <p className="text-sm text-ink-soft leading-relaxed">Working alongside your in-house team to fill specific expertise or capacity gaps.</p>
+                  </div>
+                  <div className="rounded-2xl border border-green/25 bg-green-tint/50 p-5">
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-green font-bold mb-2">Consulting</p>
+                    <p className="text-sm text-ink-soft leading-relaxed">Targeted advisory and review services for specific studies, protocols, or submissions.</p>
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-28">
+      {/* Values section */}
+      <section className="bg-paper py-16 sm:py-24">
         <div className="container-page">
           <SectionHeading
             eyebrow="How we operate"
             title="Values that show up in the deliverables, not just the deck."
           />
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 0.08}>
-                <div className="flex gap-5 rounded-2xl border border-border bg-surface p-7 shadow-sm hover:border-teal/30 hover:shadow-[0_18px_40px_rgba(18,59,109,0.06)] transition-all">
+                <div className="flex gap-4 sm:gap-5 rounded-2xl border border-border bg-surface p-6 sm:p-7 shadow-sm hover:border-teal/30 hover:shadow-[0_18px_40px_rgba(18,59,109,0.06)] transition-all h-full">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-teal-tint text-teal">
                     <v.icon size={18} />
                   </span>
@@ -94,7 +95,6 @@ export default function About() {
         </div>
       </section>
 
-
       <ContactCTA
         eyebrow="Meet the team"
         title="Want to know who'd be on your study?"
@@ -103,3 +103,4 @@ export default function About() {
     </>
   );
 }
+

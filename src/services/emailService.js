@@ -55,6 +55,7 @@ export async function sendContactEmail(formData, country) {
     organization: formData.company.trim(),
     service_needed: formData.serviceNeeded ? formData.serviceNeeded.trim() : "Not specified",
     service: formData.serviceNeeded ? formData.serviceNeeded.trim() : "Not specified",
+    hear_about_us: formData.hearAboutUs ? formData.hearAboutUs.trim() : "Not specified",
     message: formData.message.trim(),
 
     // Metadata

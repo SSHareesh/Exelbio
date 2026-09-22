@@ -137,11 +137,11 @@ export default function NotFound() {
                 <span>Our Services</span>
               </Link>
               <Link
-                to="/solutions"
+                to="/about"
                 className="group flex items-center justify-center gap-2 p-3 rounded-2xl border border-border bg-surface/80 hover:bg-white hover:border-teal/40 transition-all text-xs font-medium text-ink shadow-2xs hover:-translate-y-0.5"
               >
                 <Search size={14} className="text-teal" />
-                <span>Therapeutic Areas</span>
+                <span>About Us</span>
               </Link>
               <Link
                 to="/contact"

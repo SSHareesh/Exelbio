@@ -56,8 +56,7 @@ export default function Footer() {
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80 font-bold mb-4">Quick links</p>
             <ul className="space-y-2.5 text-sm">
               <li><Link to="/about" className="text-footer-muted hover:text-teal transition-colors">About</Link></li>
-              <li><Link to="/solutions" className="text-footer-muted hover:text-teal transition-colors">Solutions</Link></li>
-              <li><Link to="/resources" className="text-footer-muted hover:text-teal transition-colors">Resources</Link></li>
+              <li><Link to="/services" className="text-footer-muted hover:text-teal transition-colors">Services</Link></li>
               <li><Link to="/contact" className="text-footer-muted hover:text-teal transition-colors">Contact</Link></li>
             </ul>
           </div>

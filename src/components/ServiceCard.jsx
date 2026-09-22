@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, LineChart, Terminal, Database, Users, FileCheck2, PenLine } from "lucide-react";
+import { ArrowRight, LineChart, Terminal, Users, FileCheck2 } from "lucide-react";
 import Reveal from "./Reveal";
 
-const iconMap = { LineChart, Terminal, Database, Users, FileCheck2, PenLine };
+const iconMap = { LineChart, Terminal, Users, FileCheck2 };
 
 /* ─── Per-service placeholder visual config ──────────────────────────────── */
 const placeholderConfig = {
@@ -59,101 +59,14 @@ const placeholderConfig = {
       </svg>
     ),
   },
-  "clinical-data-management": {
-    gradient: "from-[#0d2133] via-[#0f3550] to-[#0e4c72]",
-    accentColor: "#38b2e0",
-    svg: (
-      <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* Database cylinders */}
-        <ellipse cx="80" cy="50" rx="38" ry="12" fill="#38b2e0" fillOpacity="0.2" stroke="#38b2e0" strokeOpacity="0.5" strokeWidth="1.2"/>
-        <rect x="42" y="50" width="76" height="48" fill="#38b2e0" fillOpacity="0.08"/>
-        <line x1="42" y1="50" x2="42" y2="98" stroke="#38b2e0" strokeOpacity="0.4" strokeWidth="1.2"/>
-        <line x1="118" y1="50" x2="118" y2="98" stroke="#38b2e0" strokeOpacity="0.4" strokeWidth="1.2"/>
-        <ellipse cx="80" cy="98" rx="38" ry="12" fill="#38b2e0" fillOpacity="0.15" stroke="#38b2e0" strokeOpacity="0.5" strokeWidth="1.2"/>
-        <ellipse cx="80" cy="70" rx="38" ry="12" fill="none" stroke="#38b2e0" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="4 3"/>
-        {/* Connector line */}
-        <line x1="120" y1="74" x2="160" y2="74" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="4 3"/>
-        {/* Table */}
-        <rect x="160" y="40" width="100" height="70" rx="6" fill="white" fillOpacity="0.04" stroke="white" strokeOpacity="0.1" strokeWidth="1"/>
-        <rect x="160" y="40" width="100" height="16" rx="6" fill="#38b2e0" fillOpacity="0.2"/>
-        {[56,68,80,96].map((y,i) => (
-          <rect key={i} x="168" y={y} width={i%2===0?50:35} height="5" rx="2" fill="white" fillOpacity="0.15"/>
-        ))}
-        <text x="22" y="148" fill="white" fillOpacity="0.3" fontSize="8" fontFamily="monospace">CLEAN · LOCKED · VALIDATED</text>
-      </svg>
-    ),
-  },
-  "statistical-consulting": {
-    gradient: "from-[#1a1035] via-[#261850] to-[#1e2a6e]",
-    accentColor: "#a78bfa",
-    svg: (
-      <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* Person 1 */}
-        <circle cx="80" cy="58" r="18" fill="#a78bfa" fillOpacity="0.2" stroke="#a78bfa" strokeOpacity="0.5" strokeWidth="1.5"/>
-        <circle cx="80" cy="54" r="8" fill="#a78bfa" fillOpacity="0.5"/>
-        <path d="M60 90 Q80 78 100 90" stroke="#a78bfa" strokeOpacity="0.5" strokeWidth="2" fill="none"/>
-        {/* Person 2 */}
-        <circle cx="200" cy="58" r="18" fill="#0e9cb8" fillOpacity="0.2" stroke="#0e9cb8" strokeOpacity="0.5" strokeWidth="1.5"/>
-        <circle cx="200" cy="54" r="8" fill="#0e9cb8" fillOpacity="0.5"/>
-        <path d="M180 90 Q200 78 220 90" stroke="#0e9cb8" strokeOpacity="0.5" strokeWidth="2" fill="none"/>
-        {/* Connection arc */}
-        <path d="M100 68 Q140 40 180 68" stroke="white" strokeOpacity="0.2" strokeWidth="1.5" strokeDasharray="5 4" fill="none"/>
-        {/* Chat bubble */}
-        <rect x="108" y="100" width="64" height="32" rx="8" fill="white" fillOpacity="0.06" stroke="white" strokeOpacity="0.12" strokeWidth="1"/>
-        <rect x="116" y="108" width="40" height="4" rx="2" fill="#a78bfa" fillOpacity="0.5"/>
-        <rect x="116" y="118" width="28" height="4" rx="2" fill="white" fillOpacity="0.2"/>
-        <path d="M140 132 L136 140 L148 132" fill="white" fillOpacity="0.06"/>
-        <text x="22" y="148" fill="white" fillOpacity="0.3" fontSize="8" fontFamily="monospace">EXPERT · ADVISORY · SUPPORT</text>
-      </svg>
-    ),
-  },
-  "regulatory-submission-support": {
-    gradient: "from-[#0a2018] via-[#0f3828] to-[#0d5238]",
-    accentColor: "#34d399",
-    svg: (
-      <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* Document stack */}
-        <rect x="75" y="34" width="90" height="110" rx="6" fill="white" fillOpacity="0.04" stroke="white" strokeOpacity="0.08" strokeWidth="1" transform="rotate(-5 75 34)"/>
-        <rect x="80" y="28" width="90" height="110" rx="6" fill="white" fillOpacity="0.05" stroke="white" strokeOpacity="0.1" strokeWidth="1" transform="rotate(-2 80 28)"/>
-        {/* Main document */}
-        <rect x="85" y="22" width="90" height="112" rx="6" fill="#0f3828" stroke="#34d399" strokeOpacity="0.35" strokeWidth="1.2"/>
-        {/* Doc lines */}
-        {[44,56,68,80,92].map((y,i) => (
-          <rect key={i} x="97" y={y} width={i===0?60:45} height="5" rx="2" fill="white" fillOpacity={i===0?0.25:0.12}/>
-        ))}
-        {/* Checkmarks */}
-        <circle cx="108" cy="108" r="9" fill="#34d399" fillOpacity="0.25" stroke="#34d399" strokeOpacity="0.6" strokeWidth="1.2"/>
-        <path d="M104 108 L107 111 L113 104" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        {/* FDA badge */}
-        <rect x="170" y="60" width="50" height="22" rx="4" fill="#34d399" fillOpacity="0.15" stroke="#34d399" strokeOpacity="0.4" strokeWidth="1"/>
-        <text x="177" y="74" fill="#34d399" fillOpacity="0.8" fontSize="9" fontFamily="monospace" fontWeight="bold">eCTD</text>
-        <text x="22" y="148" fill="white" fillOpacity="0.3" fontSize="8" fontFamily="monospace">FDA · EMA · PMDA READY</text>
-      </svg>
-    ),
-  },
-  "medical-writing": {
-    gradient: "from-[#201508] via-[#3a2010] to-[#522c10]",
-    accentColor: "#fb923c",
-    svg: (
-      <svg viewBox="0 0 280 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        {/* Paper */}
-        <rect x="60" y="20" width="120" height="120" rx="6" fill="white" fillOpacity="0.05" stroke="white" strokeOpacity="0.1" strokeWidth="1"/>
-        {/* Lines of text */}
-        {[42,56,70,84,98,112].map((y,i) => (
-          <rect key={i} x="76" y={y} width={[90,75,88,60,82,50][i]} height="6" rx="2" fill="white" fillOpacity={i===0?0.3:0.14}/>
-        ))}
-        {/* Pen */}
-        <g transform="translate(148, 90) rotate(-40)">
-          <rect x="-4" y="-45" width="8" height="36" rx="2" fill="#fb923c" fillOpacity="0.8"/>
-          <polygon points="-4,−9 4,−9 0,2" fill="#fb923c" fillOpacity="0.9"/>
-          <rect x="-4" y="-52" width="8" height="8" rx="1" fill="white" fillOpacity="0.3"/>
-        </g>
-        {/* Ink scratch */}
-        <path d="M142 118 Q155 112 165 120" stroke="#fb923c" strokeOpacity="0.6" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <text x="22" y="148" fill="white" fillOpacity="0.3" fontSize="8" fontFamily="monospace">PROTOCOLS · CSR · MANUSCRIPTS</text>
-      </svg>
-    ),
-  },
+};
+
+
+const serviceImages = {
+  "biostatistics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  "statistical-programming": "https://images.unsplash.com/photo-1763038311036-6d18805537e5?q=80&w=1036&auto=format&fit=crop",
+  "biometrics-consulting": "https://images.unsplash.com/photo-1573166826272-5acd0ef8f650?q=80&w=869&auto=format&fit=crop",
+  "regulatory-submission-support": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
 };
 
 export default function ServiceCard({ service, index }) {
@@ -166,21 +79,33 @@ export default function ServiceCard({ service, index }) {
         to={`/services/${service.slug}`}
         className="group relative flex h-full flex-col rounded-3xl border border-border bg-surface overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-[0_20px_45px_-20px_rgba(18,59,109,0.14)]"
       >
-        {/* ── Image placeholder ──────────────────────────────── */}
+        {/* ── Image / Illustration ──────────────────────────── */}
         <div
-          className={`relative w-full aspect-[16/9] bg-gradient-to-br ${placeholder.gradient} overflow-hidden shrink-0`}
-          data-service-placeholder="true"
-          data-slug={service.slug}
-          aria-label={`${service.title} service illustration placeholder`}
+          className={`relative w-full aspect-[16/9] overflow-hidden shrink-0 ${
+            serviceImages[service.slug]
+              ? "bg-paper-dim"
+              : `bg-gradient-to-br ${placeholder.gradient}`
+          }`}
         >
-          {/* Subtle grain overlay */}
-          <div className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
-            style={{backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"}}
-          />
-          {/* SVG illustration */}
-          <div className="absolute inset-0 flex items-center justify-center p-2 transition-transform duration-500 group-hover:scale-[1.03]">
-            {placeholder.svg}
-          </div>
+          {serviceImages[service.slug] ? (
+            <img
+              src={serviceImages[service.slug]}
+              alt={service.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          ) : (
+            <>
+              {/* Grain overlay */}
+              <div className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
+                style={{backgroundImage:"url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"}}
+              />
+              {/* SVG illustration */}
+              <div className="absolute inset-0 flex items-center justify-center p-2 transition-transform duration-500 group-hover:scale-[1.03]">
+                {placeholder.svg}
+              </div>
+            </>
+          )}
           {/* Bottom fade into card */}
           <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-surface/30 to-transparent" />
         </div>

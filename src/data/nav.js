@@ -12,9 +12,9 @@ export const services = [
     icon: "Terminal",
   },
   {
-    slug: "statistical-consulting",
-    title: "Statistical Consulting",
-    short: "An experienced statistician in the room for every decision.",
+    slug: "biometrics-consulting",
+    title: "Biometrics Consulting",
+    short: "Biometrics leadership, FSP support, and functional outsourcing across every study phase.",
     icon: "Users",
   },
   {
@@ -29,8 +29,8 @@ export const primaryNav = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services", hasDropdown: true },
-  { label: "Solutions", to: "/solutions" },
-  { label: "Resources", to: "/resources", hasDropdown: true },
+  // { label: "Solutions", to: "/solutions" },
+  // { label: "Resources", to: "/resources", hasDropdown: true },
   { label: "Contact", to: "/contact" },
 ];
 

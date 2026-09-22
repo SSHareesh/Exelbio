@@ -20,6 +20,7 @@ export default function Contact() {
     phone: "",
     company: "",
     serviceNeeded: "",
+    hearAboutUs: "",
     message: "",
   });
 
@@ -175,6 +176,7 @@ export default function Contact() {
       phone: "",
       company: "",
       serviceNeeded: "",
+      hearAboutUs: "",
       message: "",
     });
     setErrors({});
@@ -234,6 +236,19 @@ export default function Contact() {
                       scheduling link for a call with the statistician best suited to
                       your indication.
                     </p>
+                  </div>
+
+                  <div className="mt-8 pt-8 border-t border-border">
+                    <p className="font-mono text-xs uppercase tracking-widest text-teal font-bold mb-2">Speak to our expert</p>
+                    <p className="text-ink-soft text-sm leading-relaxed">
+                      Prefer a direct conversation? Book a free 30-minute call with one of our senior biostatisticians — no commitment, just clarity on what your study needs.
+                    </p>
+                    <a
+                      href="mailto:hello@Exelbiobiostat.example?subject=Expert%20Consultation%20Request"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-xs font-bold text-white hover:bg-teal-hover transition-colors shadow-sm"
+                    >
+                      Book a free call
+                    </a>
                   </div>
                 </div>
               </Reveal>
@@ -450,6 +465,34 @@ export default function Contact() {
                           <option value="Other / Multiple Services">
                             Other / Multiple Services
                           </option>
+                        </select>
+                      </div>
+
+                      {/* Where did you hear about us? (OPTIONAL) */}
+                      <div className="sm:col-span-2">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <label htmlFor="hearAboutUs" className="block text-xs font-mono uppercase tracking-wide text-ink-soft font-semibold">
+                            Where did you hear about us?
+                          </label>
+                          <span className="text-[11px] font-mono text-ink-soft/70 uppercase tracking-wider">
+                            Optional
+                          </span>
+                        </div>
+                        <select
+                          id="hearAboutUs"
+                          disabled={isSubmitting}
+                          value={formData.hearAboutUs}
+                          onChange={(e) => handleChange("hearAboutUs", e.target.value)}
+                          className="w-full rounded-xl border border-border bg-paper focus:bg-white px-4 py-3 text-sm text-ink focus-ring focus:border-teal transition-colors disabled:opacity-60"
+                        >
+                          <option value="">Select an option (optional)...</option>
+                          <option value="Google / Search engine">Google / Search engine</option>
+                          <option value="LinkedIn">LinkedIn</option>
+                          <option value="Conference or event">Conference or event</option>
+                          <option value="Referral from a colleague">Referral from a colleague</option>
+                          <option value="Industry publication">Industry publication</option>
+                          <option value="Existing client">Existing client</option>
+                          <option value="Other">Other</option>
                         </select>
                       </div>
 

@@ -12,6 +12,13 @@ import { serviceDetails } from "../data/serviceDetails";
 
 const iconMap = { LineChart, Terminal, Users, FileCheck2 };
 
+const serviceImages = {
+  "biostatistics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  "statistical-programming": "https://images.unsplash.com/photo-1763038311036-6d18805537e5?q=80&w=1036&auto=format&fit=crop",
+  "biometrics-consulting": "https://images.unsplash.com/photo-1573166826272-5acd0ef8f650?q=80&w=869&auto=format&fit=crop",
+  "regulatory-submission-support": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+};
+
 function FaqItem({ item, index }) {
   const [open, setOpen] = useState(index === 0);
   return (
@@ -72,17 +79,27 @@ export default function ServicePage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 border-b border-border">
+      <section className="bg-white py-16 sm:py-24 border-b border-border">
         <div className="container-page">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14">
-            <div className="lg:col-span-5">
-              <SectionHeading eyebrow="Overview" title="What this service covers" />
-            </div>
-            <div className="lg:col-span-7">
-              <Reveal>
-                <p className="text-lg text-ink-soft leading-relaxed">{detail.overview}</p>
-              </Reveal>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            {/* Left — heading + overview text */}
+            <Reveal>
+              <div>
+                <SectionHeading eyebrow="Overview" title="What this service covers" />
+                <p className="mt-6 text-base sm:text-lg text-ink-soft leading-relaxed">{detail.overview}</p>
+              </div>
+            </Reveal>
+            {/* Right — service image */}
+            <Reveal delay={0.12}>
+              <div className="w-full h-[280px] sm:h-[340px] lg:h-[420px] rounded-3xl overflow-hidden shadow-md border border-border">
+                <img
+                  src={serviceImages[slug]}
+                  alt={detail.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

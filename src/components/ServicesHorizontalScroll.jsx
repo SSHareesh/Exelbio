@@ -72,17 +72,17 @@ function IntroCard() {
 */
 
 const highlights = {
-  "biostatistics": ["SAP authorship", "Sample size & power", "Adaptive design simulation"],
-  "statistical-programming": ["SDTM / ADaM datasets", "Double-programming QC", "SAS & R capable"],
-  "statistical-consulting": ["FDA meeting prep", "Estimand strategy", "Independent SAP review"],
+  "biostatistics": ["Study design & sample size", "Statistical analysis plans", "TFL development"],
+  "statistical-programming": ["SAS & R programming", "CDISC SDTM / ADaM", "Pinnacle 21 validation"],
+  "biometrics-consulting": ["Biometrics leadership", "FSP support", "Inspection readiness"],
   "regulatory-submission-support": ["ISS / ISE construction", "eCTD Module 5 packaging", "IR fast turnaround"],
 };
 
 const serviceImages = {
-  "biostatistics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
-  "statistical-programming": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-  "statistical-consulting": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
-  "regulatory-submission-support": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80",
+  "biostatistics": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  "statistical-programming": "https://images.unsplash.com/photo-1763038311036-6d18805537e5?q=80&w=1036&auto=format&fit=crop",
+  "biometrics-consulting": "https://images.unsplash.com/photo-1573166826272-5acd0ef8f650?q=80&w=869&auto=format&fit=crop",
+  "regulatory-submission-support": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
 };
 
 function ImageCard({ service, tone, className = "" }) {
@@ -293,15 +293,7 @@ export default function ServicesHorizontalScroll() {
       </section>
 
       {/* ── Mobile / small tablet: native horizontal swipe, no scroll-jacking ── */}
-      <section className="relative bg-paper py-20 lg:hidden border-b border-border">
-        <div className="container-page mb-8">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-teal flex items-center gap-2 font-bold">
-            What we do
-          </p>
-          <h2 className="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl leading-[1.2] tracking-tight text-primary font-bold">
-            Services
-          </h2>
-        </div>
+      <section className="relative bg-paper pt-6 pb-20 lg:hidden border-b border-border">
 
         <div className="flex gap-5 overflow-x-auto px-6 pb-5 snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {/* Intro card */}

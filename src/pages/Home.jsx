@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// import LoadingScreen from "../components/LoadingScreen";
 import HeroParallax from "../components/HeroParallax";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
@@ -12,25 +11,14 @@ import { strengths, testimonials } from "../data/home";
 export default function Home() {
   return (
     <>
-      {/* ══════════════════════════════════════════════════════════
-          INTRO — 100 vh spacer + fixed loading overlay.
-          Scrolling through the spacer drives the overlay off screen.
-          ═════════════════════════════════════════════════════════ */}
-      {/* <LoadingScreen /> */}
-
-      {/* ══════════════════════════════════════════════════════════
-          HERO — sits immediately after the spacer in the DOM.
-          When the loading overlay fully exits (spacer scrolled),
-          the hero's top edge is exactly at the viewport top.
-          ═════════════════════════════════════════════════════════ */}
       <HeroParallax />
 
       {/* ══════════════════════════════════════════════════════════
           ABOUT
           ═════════════════════════════════════════════════════════ */}
-      <section className="relative bg-white py-28 border-b border-border">
+      <section className="relative bg-white py-20 sm:py-28 border-b border-border">
         <div className="container-page">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
 
             {/* Left column ─────────────────────────────────────── */}
             <div className="lg:col-span-5">
@@ -42,50 +30,36 @@ export default function Home() {
               >
                 <SectionHeading
                   eyebrow="Who we are"
-                  title="A CRO built by statisticians, still run by statisticians."
-                  description="Exelbio was founded in 2013 by three biostatisticians who kept seeing the same problem elsewhere: the person who designed a trial's analysis was rarely the person defending it in front of a review team. We built the company around fixing that."
+                  title="A breadth of experience in every aspect of Biostatistics."
+                  description="Exelbio is a small and growing Biostatistical service provider collaborating with pharma and biotechnology companies to bring the best results of clinical trial data. Excellence has always been our standard — exhibiting a high level of ethics, integrity, and professionalism."
                 />
               </motion.div>
-
-              <Reveal delay={0.2}>
-                <div className="mt-9 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">Est. 2013</span>
-                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">Cambridge, MA</span>
-                  <span className="rounded-full border border-border px-4 py-2 text-xs font-mono uppercase tracking-wide text-primary bg-paper font-semibold shadow-xs">62 staff biostatisticians</span>
-                </div>
-              </Reveal>
             </div>
 
             {/* Right column ─────────────────────────────────────── */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               <Reveal delay={0.1} variant="scale">
-                <div className="rounded-3xl border border-teal/30 bg-teal-tint/70 p-8 h-full shadow-sm">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal font-bold mb-4">Mission</p>
-                  <p className="font-display text-lg sm:text-xl leading-snug text-primary font-bold">
-                    Give every sponsor the statistical rigor of an in-house biometrics
-                    department, without the overhead of building one.
+                <div className="rounded-3xl border border-teal/30 bg-teal-tint/70 p-7 sm:p-8 h-full shadow-sm">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal font-bold mb-4">Our Standard</p>
+                  <p className="font-display text-base sm:text-lg leading-snug text-primary font-bold">
+                    Statistical programming is a vital component of all drug development — turning validated data into interpretable, analysis-ready information.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.18} variant="scale">
-                <div className="rounded-3xl border border-green/30 bg-green-tint/70 p-8 h-full shadow-sm">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-green font-bold mb-4">Vision</p>
-                  <p className="font-display text-lg sm:text-xl leading-snug text-primary font-bold">
-                    A future where no trial's conclusions are questioned because of how,
-                    rather than what, the data showed.
+                <div className="rounded-3xl border border-green/30 bg-green-tint/70 p-7 sm:p-8 h-full shadow-sm">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-green font-bold mb-4">Our Approach</p>
+                  <p className="font-display text-base sm:text-lg leading-snug text-primary font-bold">
+                    Every project is customized using one of our partnership models, designed to precisely meet the objectives of our clients.
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.26} className="sm:col-span-2">
-                <div className="rounded-3xl border border-border bg-paper p-8">
-                  <p className="text-ink-soft leading-relaxed">
-                    Today we support Phase I through Phase IV programs across oncology,
-                    rare disease, cardiometabolic, immunology, and CNS indications — for
-                    biotechs running their first IND and specialty pharma companies
-                    managing a full submission portfolio. What hasn't changed since 2013
-                    is the model: a named statistician, accountable end to end.
+                <div className="rounded-3xl border border-border bg-paper p-7 sm:p-8">
+                  <p className="text-sm sm:text-base text-ink-soft leading-relaxed">
+                    Whether you are a Large Pharma, Mid-size Pharma, Biotechnology, Device, or Nutraceutical company — our expert statisticians and programmers have detailed knowledge of all Phases and experience across a multitude of therapeutic areas, forming long-lasting partnerships throughout the drug development spectrum.
                   </p>
                 </div>
               </Reveal>
